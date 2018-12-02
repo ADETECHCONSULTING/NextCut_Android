@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+    <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context="traore.adama.nextcut_android.ui.SplashScreenActivity">
+
+
+        <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/animation_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:lottie_fileName="nextcut_splash.json"
+                app:lottie_loop="true"
+                app:lottie_autoPlay="true" />
+
+
+
+    </android.support.constraint.ConstraintLayout>
+</layout>
