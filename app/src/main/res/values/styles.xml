@@ -9,8 +9,18 @@
     </style>
 
 
-    <style name="SplashScreenTheme" parent="AppTheme">
+    <!-- no title bar -->
+    <style name="AppTheme.NoTitleBar" parent="AppTheme">
+        <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+        <item name="android:elevation">0dp</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <!-- no title bar and fullscreen -->
+    <style name="AppTheme.NoTitleBar.FullScreen">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
     </style>
 
 </resources>

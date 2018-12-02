@@ -11,6 +11,7 @@ class SplashScreenActivity : AppCompatActivity() {
     lateinit var binding: ActivitySplashScreenBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        setTheme(R.style.AppTheme_NoTitleBar_FullScreen);
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash_screen)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_splash_screen)
