@@ -84,7 +84,7 @@ dependencies {
     implementation 'com.squareup.retrofit2:retrofit:2.5.0'
 
     //lottie
-    implementation 'com.airbnb.android:lottie:2.5.5'
+    implementation 'com.airbnb.android:lottie:2.7.0'
 
     //transition
     implementation "com.andkulikov:transitionseverywhere:1.8.0"
