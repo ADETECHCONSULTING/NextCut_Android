@@ -10,26 +10,7 @@ import android.view.animation.Animation
 import traore.adama.nextcut_android.R
 import traore.adama.nextcut_android.databinding.ActivitySplashScreenBinding
 
-class SplashScreenActivity : AppCompatActivity(), Animator.AnimatorListener {
-
-
-    //region AnimatorListenener methods
-    override fun onAnimationRepeat(animation: Animator?) {
-        Log.e("Animation:","repeat")
-    }
-
-    override fun onAnimationEnd(animation: Animator?) {
-        Log.e("Animation:","end")
-    }
-
-    override fun onAnimationCancel(animation: Animator?) {
-        Log.e("Animation:","cancel")
-    }
-
-    override fun onAnimationStart(animation: Animator?) {
-        Log.e("Animation:","start")
-    }
-    //endregion
+class SplashScreenActivity : AppCompatActivity(){
 
     lateinit var binding: ActivitySplashScreenBinding
 
@@ -39,32 +20,34 @@ class SplashScreenActivity : AppCompatActivity(), Animator.AnimatorListener {
         setContentView(R.layout.activity_splash_screen)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_splash_screen)
 
-        binding.animationView.setAnimation("nextcut_splash_mobile.json")
+        binding.animationView.setAnimation("loading_splashscreen.json")
         binding.animationView.playAnimation()
+
         binding.animationView.addAnimatorListener(object: Animator.AnimatorListener{
             override fun onAnimationCancel(p0: Animator?) {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+                Log.e("Animation:","cancel")
             }
 
             override fun onAnimationRepeat(p0: Animator?) {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+                Log.e("Animation:","repeat")
             }
 
             override fun onAnimationEnd(animation: Animator?, isReverse: Boolean) {
                 super.onAnimationEnd(animation, isReverse)
+                Log.e("Animation:","end")
             }
 
             override fun onAnimationEnd(p0: Animator?) {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+                Log.e("Animation:","end")
             }
 
             override fun onAnimationStart(animation: Animator?, isReverse: Boolean) {
                 super.onAnimationStart(animation, isReverse)
+                Log.e("Animation:","start")
             }
 
             override fun onAnimationStart(p0: Animator?) {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-            }
+                Log.e("Animation:","start2") }
         })
     }
 
