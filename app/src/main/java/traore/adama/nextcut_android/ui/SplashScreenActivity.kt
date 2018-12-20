@@ -52,7 +52,6 @@ class SplashScreenActivity : AppCompatActivity(){
                 Log.e("Animation:","start2") }
         })
 
-
     }
 
 }
