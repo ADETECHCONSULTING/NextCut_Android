@@ -11,12 +11,12 @@ import traore.adama.nextcut_android.R
 import kotlinx.android.synthetic.main.activity_main.*
 import traore.adama.nextcut_android.ui.adapter.MyPagerAdapter
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
 
     val myPagerAdapter:MyPagerAdapter by lazy {
         MyPagerAdapter(supportFragmentManager, this)
     }
-    val Tag: String = MainActivity.javaClass.simpleName;
+    val Tag: String = MainActivity::class.java.simpleName;
 
     companion object {
         fun launch(activity: Activity){
@@ -46,5 +46,9 @@ class MainActivity : AppCompatActivity() {
             super.onBackPressed()
         else
             ctn_view_pager.currentItem = -1
+    }
+
+    fun setToolbarTitle(title: String){
+        txv_title.text = title
     }
 }
