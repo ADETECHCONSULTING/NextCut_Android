@@ -9,7 +9,7 @@ import android.os.Bundle
 import traore.adama.nextcut_android.R
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
 
     companion object {
         fun launch(activity: Activity){
@@ -25,5 +25,6 @@ class MainActivity : AppCompatActivity() {
 
         //activate the animation when children view are updated
         ctnMain.layoutTransition.enableTransitionType(LayoutTransition.CHANGING)
+
     }
 }
