@@ -35,7 +35,6 @@ class SplashScreenActivity : AppCompatActivity(){
             override fun onAnimationEnd(animation: Animator?, isReverse: Boolean) {
                 super.onAnimationEnd(animation, isReverse)
                 Log.e("Animation:","end - isReverse : "+isReverse)
-                MainActivity.launch(this@SplashScreenActivity)
             }
 
             override fun onAnimationEnd(p0: Animator?) {
