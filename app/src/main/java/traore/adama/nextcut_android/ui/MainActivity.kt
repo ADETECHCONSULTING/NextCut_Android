@@ -41,5 +41,10 @@ class MainActivity : AppCompatActivity() {
         vg_tabLayout.setupWithViewPager(ctn_view_pager)
     }
 
-
+    override fun onBackPressed() {
+        if(ctn_view_pager.currentItem == 0)
+            super.onBackPressed()
+        else
+            ctn_view_pager.currentItem = -1
+    }
 }
