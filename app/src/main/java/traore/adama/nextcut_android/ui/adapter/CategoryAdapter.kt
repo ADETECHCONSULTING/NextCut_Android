@@ -35,7 +35,7 @@ class CategoryAdapter(context: Context) : RecyclerView.Adapter<CategoryAdapter.C
 
     class CategoryHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
 
-        val imgCategory = itemView.img_category
+        val imgCategory = itemView.imv_category
 
         fun setItems(item: Haircut){
 
