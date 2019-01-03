@@ -8,14 +8,13 @@ import android.view.ViewGroup
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_category.view.*
 import traore.adama.nextcut_android.R
-import traore.adama.nextcut_android.model.Haircut
+import traore.adama.nextcut_android.database.model.Haircut
 
-class CategoryAdapter(context: Context) : RecyclerView.Adapter<CategoryAdapter.CategoryHolder>(){
+class CategoryAdapter : RecyclerView.Adapter<CategoryAdapter.CategoryHolder>(){
     var items: List<Haircut> = ArrayList()
 
     fun resetData(items: List<Haircut>){
-        if(items != null)
-            this.items = items
+        this.items = items
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, position: Int): CategoryHolder {

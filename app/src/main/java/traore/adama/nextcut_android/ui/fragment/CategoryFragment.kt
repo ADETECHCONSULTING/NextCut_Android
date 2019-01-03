@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import traore.adama.nextcut_android.R
 import kotlinx.android.synthetic.main.fragment_list.*
+import traore.adama.nextcut_android.ui.adapter.CategoryAdapter
 
 class CategoryFragment : Fragment() {
 
@@ -17,7 +18,11 @@ class CategoryFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        
+        var adapter: CategoryAdapter = CategoryAdapter()
+
+
     }
+
+
 
 }
