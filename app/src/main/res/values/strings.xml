@@ -5,4 +5,6 @@
     <string name="category">Catégories</string>
     <string name="favorites">Favoris</string>
     <string name="category_haircut">category_haircut</string>
+    <string name="title_explore">Explore</string>
+    <string name="title_favorites">Favoris</string>
 </resources>

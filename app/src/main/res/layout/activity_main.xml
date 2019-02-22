@@ -16,7 +16,8 @@
             android:layout_width="match_parent"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent">
 
         <TextView android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
@@ -31,10 +32,10 @@
             android:id="@+id/vg_tabLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:tabIconTint="@color/colorBlackDisabled"
             android:background="@color/colorPrimary"
             app:layout_constraintTop_toBottomOf="@id/toolbar"
             app:tabMode="fixed"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
     />
 
     <android.support.v4.view.ViewPager

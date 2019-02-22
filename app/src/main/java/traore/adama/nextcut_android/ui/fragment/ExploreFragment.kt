@@ -7,10 +7,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import traore.adama.nextcut_android.R
-import kotlinx.android.synthetic.main.fragment_list.*
-import traore.adama.nextcut_android.ui.adapter.CategoryAdapter
+import traore.adama.nextcut_android.ui.MainActivity
+import traore.adama.nextcut_android.ui.adapter.ExploreAdapter
 
-class CategoryFragment : Fragment() {
+class ExploreFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
@@ -18,11 +18,9 @@ class CategoryFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        var adapter: CategoryAdapter = CategoryAdapter()
-
+        var adapter: ExploreAdapter = ExploreAdapter()
 
     }
-
 
 
 }

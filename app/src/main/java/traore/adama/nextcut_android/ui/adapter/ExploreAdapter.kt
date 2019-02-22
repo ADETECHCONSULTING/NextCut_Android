@@ -1,16 +1,14 @@
 package traore.adama.nextcut_android.ui.adapter
 
-import android.content.Context
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_category.view.*
 import traore.adama.nextcut_android.R
 import traore.adama.nextcut_android.database.model.Haircut
 
-class CategoryAdapter : RecyclerView.Adapter<CategoryAdapter.CategoryHolder>(){
+class ExploreAdapter : RecyclerView.Adapter<ExploreAdapter.CategoryHolder>(){
     var items: List<Haircut> = ArrayList()
 
     fun resetData(items: List<Haircut>){
