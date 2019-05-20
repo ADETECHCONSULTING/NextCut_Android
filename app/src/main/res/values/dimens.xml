@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="category_img_width">150dp</dimen>
+    <dimen name="padding_14">14dp</dimen>
+    <dimen name="min_width_fav_button">48dp</dimen>
+    <dimen name="img_height_nextcutter">192dp</dimen>
+    <dimen name="appbarlayout_height">400dp</dimen>
 </resources>

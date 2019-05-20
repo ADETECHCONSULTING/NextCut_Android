@@ -23,6 +23,44 @@
         <item name="android:windowContentOverlay">@null</item>
     </style>
 
+    <style name="Widget.Nextcut.CollapsingToolbar" parent="">
+        <item name="collapsedTitleTextAppearance">@style/TextAppearance.Nextcut.Logo</item>
+        <item name="contentScrim">?attr/colorPrimary</item>
+        <item name="expandedTitleGravity">top</item>
+        <item name="expandedTitleMarginStart">124dp</item>
+        <item name="expandedTitleMarginTop">140dp</item>
+        <item name="expandedTitleTextAppearance">@style/TextAppearance.Nextcut.Logo</item>
+        <item name="scrimVisibleHeightTrigger">140dp</item>
+    </style>
+
+    <style name="Widget.Nextcut.Toolbar" parent="Widget.AppCompat.Toolbar">
+        <item name="contentInsetStart">12dp</item>
+        <item name="titleTextAppearance">@style/TextAppearance.Nextcut.Logo</item>
+    </style>
+
+    <style name="Base.TextAppearance.Nextcut.Logo" parent="TextAppearance.AppCompat.Display3">
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextAppearance.Nextcut.Logo" parent="Base.TextAppearance.Nextcut.Logo">
+        <item name="android:letterSpacing">0.20</item>
+    </style>
+
+    <style name="Widget.Shrine.CollapsingToolbarImage" parent="">
+        <item name="android:layout_marginTop">48dp</item>
+        <item name="android:adjustViewBounds">true</item>
+    </style>
+
+    <style name="Widget.Shrine.CollapsingToolbarContent" parent="">
+        <item name="android:layout_marginTop">160dp</item>
+        <item name="android:layout_marginLeft">124dp</item>
+        <item name="android:layout_marginRight">16dp</item>
+        <item name="android:layout_gravity">top</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
 
     <!-- textviews styles -->
     <style name="TextViewBrand" parent="RobotoRegular">
@@ -44,6 +82,12 @@
         <item name="android:gravity">center</item>
     </style>
 
+    <style name="TextViewPrice" parent="RobotoRegular">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:gravity">center</item>
+    </style>
+
     <style name="TextViewContent" parent="RobotoThin">
         <item name="android:textSize">13sp</item>
         <item name="android:textColor">@color/colorBlackMediumEmphasis</item>
@@ -60,7 +104,6 @@
         <item name="android:fontFamily">@font/roboto_family</item>
         <item name="android:fontStyle">italic</item>
     </style>
-
 
 
     <!-- Rating bar style -->

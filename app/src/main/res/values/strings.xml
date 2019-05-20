@@ -7,4 +7,6 @@
     <string name="category_haircut">category_haircut</string>
     <string name="title_explore">Explore</string>
     <string name="title_favorites">Favoris</string>
+    <string name="subhead_nextcutter">Nextcuter of the month</string>
+    <string name="header_nextcutter">Best Nexcuters</string>
 </resources>

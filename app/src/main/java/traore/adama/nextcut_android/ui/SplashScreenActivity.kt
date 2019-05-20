@@ -1,29 +1,26 @@
 package traore.adama.nextcut_android.ui
 
 import android.animation.Animator
-import android.databinding.DataBindingUtil
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.util.Log
 import android.view.animation.Animation
 import traore.adama.nextcut_android.R
-import traore.adama.nextcut_android.databinding.ActivitySplashScreenBinding
+import kotlinx.android.synthetic.main.activity_splash_screen.*
 
 class SplashScreenActivity : AppCompatActivity(){
 
-    lateinit var binding: ActivitySplashScreenBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(R.style.AppTheme_NoTitleBar_FullScreen);
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash_screen)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_splash_screen)
 
-        binding.animationView.setAnimation("loading_splashscreen.json")
-        binding.animationView.playAnimation()
+        animationView.setAnimation("loading_splashscreen.json")
+        animationView.playAnimation()
 
-        binding.animationView.addAnimatorListener(object: Animator.AnimatorListener{
+        animationView.addAnimatorListener(object: Animator.AnimatorListener{
             override fun onAnimationCancel(p0: Animator?) {
                 Log.e("Animation:","cancel")
             }

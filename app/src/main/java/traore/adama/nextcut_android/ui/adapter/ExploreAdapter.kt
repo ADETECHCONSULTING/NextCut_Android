@@ -35,7 +35,7 @@ class ExploreAdapter : RecyclerView.Adapter<ExploreAdapter.CategoryHolder>(){
         val imgCategory = itemView.imv_category
 
         fun setItems(item: Haircut){
-
+            //todo: Set data to item
         }
     }
 }

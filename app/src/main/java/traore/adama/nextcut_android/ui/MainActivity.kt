@@ -40,59 +40,11 @@ class MainActivity : BaseActivity() {
 
         Log.d(Tag, "=== OnCreate MainActivity ===")
 
-        //activate the animation when children view are updated
-        ctnMain.layoutTransition.enableTransitionType(LayoutTransition.CHANGING)
 
-        //link the viewPager
-        ctn_view_pager.adapter = myPagerAdapter
-        ctn_view_pager.currentItem = 0
-
-        setupTabLayout()
-    }
-
-    override fun onBackPressed() {
-        if(ctn_view_pager.currentItem == 0)
-            super.onBackPressed()
-        else
-            ctn_view_pager.currentItem = -1
     }
 
     fun setToolbarTitle(title: String){
-        txv_title.text = title
+        toolbar.setTitle(title)
     }
 
-    /**
-     * 1. Set viewpager on the tablayout
-     * 2. Add listeners selected/unselected for TabIconTint colors
-     * 3. Add icons
-     */
-    fun setupTabLayout(){
-        val colorUnselect = ContextCompat.getColor(this@MainActivity, R.color.colorBlackDisabled)
-        val colorSelect = ContextCompat.getColor(this@MainActivity, R.color.colorWhite)
-
-        vg_tabLayout.setupWithViewPager(ctn_view_pager)
-
-        vg_tabLayout.addOnTabSelectedListener(object:
-        TabLayout.OnTabSelectedListener{
-
-            override fun onTabSelected(tab: TabLayout.Tab?) {
-                logd("Selected Tab ${tab?.position}")
-                tab?.icon?.colorFilter = PorterDuffColorFilter(colorSelect, PorterDuff.Mode.SRC_IN)
-            }
-
-            override fun onTabReselected(tab: TabLayout.Tab?) {
-
-            }
-
-            override fun onTabUnselected(tab: TabLayout.Tab?) {
-                logd("Unselected Tab ${tab?.position}")
-                tab?.icon?.colorFilter = PorterDuffColorFilter(colorUnselect, PorterDuff.Mode.SRC_IN)
-            }
-        })
-
-        for (i in 0..vg_tabLayout.tabCount)
-            vg_tabLayout.getTabAt(i)?.icon = baseContext.getDrawable(myPagerAdapter.iconsResId[i])
-
-        vg_tabLayout.getTabAt(0)?.icon?.colorFilter = PorterDuffColorFilter(colorSelect, PorterDuff.Mode.SRC_IN)
-    }
 }
