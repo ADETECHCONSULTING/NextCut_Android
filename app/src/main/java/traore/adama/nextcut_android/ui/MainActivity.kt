@@ -43,6 +43,7 @@ class MainActivity : BaseActivity() {
     }
 
 
+    //region lifecycle
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -50,10 +51,25 @@ class MainActivity : BaseActivity() {
         Log.d(Tag, "=== OnCreate MainActivity ===")
 
         bottomNavigation.setOnNavigationItemSelectedListener { menuItem -> updateFragment(menuItem.itemId) }
-        bottomNavigation.selectedItemId = R.id.action_home
-        changeFragment(HomeFragment())
+
+        //Si l'activity vient d'être init alors on met le curseur du bottomnav sur le Home par défaut
+        if(savedInstanceState == null) {
+            bottomNavigation.selectedItemId = R.id.action_home
+        }
     }
 
+    override fun onBackPressed() {
+        val fragmentManager = supportFragmentManager
+        if (fragmentManager.backStackEntryCount > 1) {
+            fragmentManager.popBackStack()
+        } else {
+            finish()
+        }
+    }
+    //endregion
+
+
+    //region functions
     fun setToolbarTitle(title: String){
         toolbar.setTitle(title)
     }
@@ -88,14 +104,7 @@ class MainActivity : BaseActivity() {
             manager.popBackStack(first.id, FragmentManager.POP_BACK_STACK_INCLUSIVE)
         }
     }
+    //endregion
 
-    override fun onBackPressed() {
-        val fragmentManager = supportFragmentManager
-        if (fragmentManager.backStackEntryCount > 1) {
-            fragmentManager.popBackStack()
-        } else {
-            finish()
-        }
-    }
 
 }
