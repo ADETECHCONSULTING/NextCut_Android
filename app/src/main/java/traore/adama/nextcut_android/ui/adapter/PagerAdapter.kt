@@ -21,7 +21,7 @@ class MyPagerAdapter(fm: FragmentManager, val activity: Activity) : FragmentStat
                 return ExploreFragment()
             }
             1 -> {
-                (activity as MainActivity).setToolbarTitle(activity.getString(R.string.title_favorites))
+                (activity as MainActivity).setToolbarTitle(activity.getString(R.string.favorites))
                 return FavoriteFragment()
             }
             else -> return null

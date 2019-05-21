@@ -6,7 +6,7 @@
              tools:context="traore.adama.nextcut_android.ui.fragment.ExploreFragment">
 
     <android.support.v7.widget.RecyclerView
-            android:id="@+id/rcv_category"
+            android:id="@+id/rcvCategory"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:listitem="@layout/item_category"

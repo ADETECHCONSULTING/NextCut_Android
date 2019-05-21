@@ -2,9 +2,9 @@
 <android.support.design.widget.CoordinatorLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        xmlns:tools="http://schemas.android.com/tools">
+        android:layout_height="match_parent">
 
     <android.support.design.widget.AppBarLayout
             android:layout_width="match_parent"
@@ -28,7 +28,7 @@
                     app:layout_collapseParallaxMultiplier="0.75"/>
 
             <LinearLayout
-                    style="@style/Widget.Shrine.CollapsingToolbarContent"
+                    style="@style/Widget.Nextcut.CollapsingToolbarContent"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:layout_collapseMode="parallax"
@@ -56,20 +56,39 @@
                     android:layout_width="match_parent"
                     android:layout_height="?attr/actionBarSize"
                     style="@style/Widget.Nextcut.Toolbar"
-                    app:layout_collapseMode="pin" />
+                    app:layout_collapseMode="pin"/>
 
         </android.support.design.widget.CollapsingToolbarLayout>
 
     </android.support.design.widget.AppBarLayout>
 
 
-    <android.support.v7.widget.RecyclerView
-            android:id="@+id/productList"
+    <android.support.constraint.ConstraintLayout
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+            android:layout_height="match_parent">
+
+        <FrameLayout
+                android:id="@+id/ctnFragment"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toTopOf="@id/bottomNavigation"
+                app:layout_constraintTop_toTopOf="parent"
+        />
 
 
+        <!-- Add this view -->
+        <android.support.design.widget.BottomNavigationView
+                android:id="@+id/bottomNavigation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:background="@color/colorWhite"
+                android:theme="@style/ThemeOverlay.Nextcut.BottomNavigation"
+                app:menu="@menu/bottom_menu"
+                app:layout_constraintBottom_toBottomOf="parent"
+        />
 
+    </android.support.constraint.ConstraintLayout>
 
 </android.support.design.widget.CoordinatorLayout>

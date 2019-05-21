@@ -10,7 +10,7 @@ import traore.adama.nextcut_android.R
 import traore.adama.nextcut_android.ui.MainActivity
 import traore.adama.nextcut_android.ui.adapter.ExploreAdapter
 
-class ExploreFragment : Fragment() {
+class CartFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment

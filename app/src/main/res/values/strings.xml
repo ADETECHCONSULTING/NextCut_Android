@@ -2,11 +2,12 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="category">Catégories</string>
-    <string name="favorites">Favoris</string>
+    <string name="category">Categories</string>
+    <string name="favorites">Favorites</string>
     <string name="category_haircut">category_haircut</string>
     <string name="title_explore">Explore</string>
-    <string name="title_favorites">Favoris</string>
     <string name="subhead_nextcutter">Nextcuter of the month</string>
     <string name="header_nextcutter">Best Nexcuters</string>
+    <string name="home">Home</string>
+    <string name="cart">cart</string>
 </resources>

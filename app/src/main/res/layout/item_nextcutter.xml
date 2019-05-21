@@ -12,7 +12,7 @@
             android:orientation="vertical"
             android:padding="8dp">
         <TextView
-                android:id="@+id/price"
+                android:id="@+id/txvPrice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
@@ -21,7 +21,7 @@
                 tools:text="195€"
                 android:textStyle="bold"/>
         <ImageView
-                android:id="@+id/image"
+                android:id="@+id/imvImage"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/img_height_nextcutter"
                 android:layout_gravity="center"
