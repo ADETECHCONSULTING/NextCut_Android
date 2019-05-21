@@ -2,6 +2,7 @@ package traore.adama.nextcut_android.ui.fragment
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
@@ -23,8 +24,8 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
         val adapter = NextcuterAdapter()
-        rcvMain.layoutManager = LinearLayoutManager(context)
         rcvMain.setHasFixedSize(true)
+        rcvMain.layoutManager = GridLayoutManager(context, resources.getInteger(R.integer.column_count))
         rcvMain.adapter = adapter
 
         val list = ArrayList<Nextcuter>()
