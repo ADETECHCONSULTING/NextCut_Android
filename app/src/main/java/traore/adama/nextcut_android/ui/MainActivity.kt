@@ -1,32 +1,16 @@
 package traore.adama.nextcut_android.ui
 
-import android.animation.LayoutTransition
 import android.app.Activity
-import android.content.Context
 import android.content.Intent
-import android.graphics.PorterDuff
-import android.graphics.PorterDuffColorFilter
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.design.widget.BottomNavigationView
-import android.support.design.widget.TabLayout
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
-import android.support.v4.content.ContextCompat
-import android.support.v7.widget.LinearLayoutManager
 import android.util.Log
-import android.view.MenuItem
-import traore.adama.nextcut_android.R
 import kotlinx.android.synthetic.main.activity_main.*
-import traore.adama.nextcut_android.database.model.Nextcuter
-import traore.adama.nextcut_android.extensions.logd
-import traore.adama.nextcut_android.ui.adapter.MyPagerAdapter
-import traore.adama.nextcut_android.ui.adapter.NextcuterAdapter
+import traore.adama.nextcut_android.R
 import traore.adama.nextcut_android.ui.fragment.CartFragment
 import traore.adama.nextcut_android.ui.fragment.FavoriteFragment
 import traore.adama.nextcut_android.ui.fragment.HomeFragment
-import java.util.*
-import kotlin.collections.ArrayList
 
 class MainActivity : BaseActivity() {
 
@@ -56,6 +40,8 @@ class MainActivity : BaseActivity() {
         if(savedInstanceState == null) {
             bottomNavigation.selectedItemId = R.id.action_home
         }
+
+        setToolbarTitle(getString(R.string.app_name))
     }
 
     override fun onBackPressed() {
