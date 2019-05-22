@@ -1,12 +1,17 @@
 package traore.adama.nextcut_android.ui.fragment
 
+import android.content.Context
 import android.os.Bundle
+import android.support.design.widget.BottomNavigationView
+import android.support.design.widget.CoordinatorLayout
 import android.support.v4.app.Fragment
 import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.FrameLayout
+import kotlinx.android.synthetic.main.activity_main.*
 import traore.adama.nextcut_android.R
 import traore.adama.nextcut_android.database.model.Nextcuter
 import traore.adama.nextcut_android.ui.adapter.ExploreAdapter
@@ -17,10 +22,13 @@ import traore.adama.nextcut_android.ui.MainActivity
 
 class HomeFragment : Fragment() {
 
+    private var behavior: CoordinatorLayout.Behavior<BottomNavigationView>? = null
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_nextcuters, container, false)
     }
+
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -32,20 +40,27 @@ class HomeFragment : Fragment() {
 
         val list = ArrayList<Nextcuter>()
         val random = Random()
-        list.add(Nextcuter(random.nextInt(100)))
-        list.add(Nextcuter(random.nextInt(100)))
-        list.add(Nextcuter(random.nextInt(100)))
-        list.add(Nextcuter(random.nextInt(100)))
-        list.add(Nextcuter(random.nextInt(100)))
-        list.add(Nextcuter(random.nextInt(100)))
-        list.add(Nextcuter(random.nextInt(100)))
-        list.add(Nextcuter(random.nextInt(100)))
-        list.add(Nextcuter(random.nextInt(100)))
-        list.add(Nextcuter(random.nextInt(100)))
-        list.add(Nextcuter(random.nextInt(100)))
-        list.add(Nextcuter(random.nextInt(100)))
+        list.add(Nextcuter(random.nextInt(100), "Traore", "Adama", getString(R.string.test_description)))
+        list.add(Nextcuter(random.nextInt(100), "Eliko", "Elige", getString(R.string.test_description)))
+        list.add(Nextcuter(random.nextInt(100), "Traore", "Tali", getString(R.string.test_description)))
+        list.add(Nextcuter(random.nextInt(100), "Lori", "Evan", getString(R.string.test_description)))
+        list.add(Nextcuter(random.nextInt(100), "Traore", "Adama", getString(R.string.test_description)))
+        list.add(Nextcuter(random.nextInt(100), "Eliko", "Elige", getString(R.string.test_description)))
+        list.add(Nextcuter(random.nextInt(100), "Traore", "Tali", getString(R.string.test_description)))
+        list.add(Nextcuter(random.nextInt(100), "Lori", "Evan", getString(R.string.test_description)))
+        list.add(Nextcuter(random.nextInt(100), "Traore", "Adama", getString(R.string.test_description)))
+        list.add(Nextcuter(random.nextInt(100), "Eliko", "Elige", getString(R.string.test_description)))
+        list.add(Nextcuter(random.nextInt(100), "Traore", "Tali", getString(R.string.test_description)))
+        list.add(Nextcuter(random.nextInt(100), "Lori", "Evan", getString(R.string.test_description)))
 
         adapter.swapData(list)
 
+        setToolbarTitle(getString(R.string.app_name))
     }
+
+    //region functions
+    fun setToolbarTitle(title: String){
+        toolbar.setTitle(title)
+    }
+
 }

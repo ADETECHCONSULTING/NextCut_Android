@@ -11,28 +11,53 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="8dp">
-        <TextView
-                android:id="@+id/txvPrice"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                style="@style/TextViewPrice"
-                android:padding="@dimen/padding_14"
-                tools:text="195€"
-                android:textStyle="bold"/>
+        
+
+
+            <TextView
+                    android:id="@+id/txvPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:gravity="end"
+                    style="@style/TextViewPrice"
+                    android:padding="@dimen/padding_14"
+                    tools:text="195€"
+                    android:textStyle="bold"/>
+
+
         <ImageView
                 android:id="@+id/imvImage"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/img_height_nextcutter"
                 android:layout_gravity="center"
                 android:scaleType="fitCenter"/>
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="horizontal">
+
+        <TextView
+                android:id="@+id/txvBarberName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.7"
+                android:gravity="start"
+                style="@style/TextViewSubTitle"
+                android:padding="@dimen/padding_14"
+                tools:text="Elige Eliko"
+                android:textStyle="bold"/>
+
         <ImageButton
                 android:id="@+id/imbFavorite"
                 style="?android:attr/actionButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_weight="0.3"
                 android:layout_gravity="end"
                 android:minWidth="@dimen/min_width_fav_button"
                 app:srcCompat="@drawable/ic_favorite_border_black"/>
+
+    </LinearLayout>
     </LinearLayout>
 </android.support.v7.widget.CardView>

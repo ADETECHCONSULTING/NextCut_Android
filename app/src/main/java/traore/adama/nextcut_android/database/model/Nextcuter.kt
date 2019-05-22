@@ -6,7 +6,10 @@ import android.arch.persistence.room.PrimaryKey
 
 //@Entity(tableName = "nextcuter")
 class Nextcuter(
-    var price: Int?
+    var price: Int?,
+    var firstname: String,
+    var lastname: String,
+    var description: String?
 )
 /*
 class Nextcuter (

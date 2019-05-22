@@ -3,9 +3,11 @@ package traore.adama.nextcut_android.ui
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import android.support.design.widget.CoordinatorLayout
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.util.Log
+import android.widget.FrameLayout
 import kotlinx.android.synthetic.main.activity_main.*
 import traore.adama.nextcut_android.R
 import traore.adama.nextcut_android.ui.fragment.CartFragment
@@ -36,12 +38,12 @@ class MainActivity : BaseActivity() {
 
         bottomNavigation.setOnNavigationItemSelectedListener { menuItem -> updateFragment(menuItem.itemId) }
 
+
         //Si l'activity vient d'être init alors on met le curseur du bottomnav sur le Home par défaut
         if(savedInstanceState == null) {
             bottomNavigation.selectedItemId = R.id.action_home
         }
 
-        setToolbarTitle(getString(R.string.app_name))
     }
 
     override fun onBackPressed() {
@@ -55,10 +57,6 @@ class MainActivity : BaseActivity() {
     //endregion
 
 
-    //region functions
-    fun setToolbarTitle(title: String){
-        toolbar.setTitle(title)
-    }
 
     fun updateFragment(itemId: Int) : Boolean{
         when(itemId){

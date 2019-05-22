@@ -36,6 +36,7 @@ class NextcuterAdapter : RecyclerView.Adapter<NextcuterAdapter.NextcuterHolder>(
         fun bind(item: Nextcuter) = with(itemView) {
 
             txvPrice.text = "${item.price} €"
+            txvBarberName.text = "${item.firstname} ${item.lastname}"
             imvImage.setBackgroundColor(randomColor())
 
             setOnClickListener {

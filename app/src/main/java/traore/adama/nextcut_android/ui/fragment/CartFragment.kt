@@ -21,8 +21,6 @@ class CartFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         var adapter: ExploreAdapter = ExploreAdapter()
 
-
-
     }
 
 
