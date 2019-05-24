@@ -38,22 +38,9 @@ class HomeFragment : Fragment() {
         rcvMain.layoutManager = GridLayoutManager(context, resources.getInteger(R.integer.column_count))
         rcvMain.adapter = adapter
 
-        val list = ArrayList<Nextcuter>()
-        val random = Random()
-        list.add(Nextcuter(random.nextInt(100), "Traore", "Adama", getString(R.string.test_description)))
-        list.add(Nextcuter(random.nextInt(100), "Eliko", "Elige", getString(R.string.test_description)))
-        list.add(Nextcuter(random.nextInt(100), "Traore", "Tali", getString(R.string.test_description)))
-        list.add(Nextcuter(random.nextInt(100), "Lori", "Evan", getString(R.string.test_description)))
-        list.add(Nextcuter(random.nextInt(100), "Traore", "Adama", getString(R.string.test_description)))
-        list.add(Nextcuter(random.nextInt(100), "Eliko", "Elige", getString(R.string.test_description)))
-        list.add(Nextcuter(random.nextInt(100), "Traore", "Tali", getString(R.string.test_description)))
-        list.add(Nextcuter(random.nextInt(100), "Lori", "Evan", getString(R.string.test_description)))
-        list.add(Nextcuter(random.nextInt(100), "Traore", "Adama", getString(R.string.test_description)))
-        list.add(Nextcuter(random.nextInt(100), "Eliko", "Elige", getString(R.string.test_description)))
-        list.add(Nextcuter(random.nextInt(100), "Traore", "Tali", getString(R.string.test_description)))
-        list.add(Nextcuter(random.nextInt(100), "Lori", "Evan", getString(R.string.test_description)))
 
-        adapter.swapData(list)
+
+        //adapter.swapData(list)
 
         setToolbarTitle(getString(R.string.app_name))
     }
