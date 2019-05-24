@@ -45,17 +45,11 @@ android {
             resValue "string", "app_name", "NextCut Demo P"
         }
 
-        demoTesting {
-            dimension "default"
-            applicationId "traore.adama.nextcut_android.demotesting"
-            resValue "string", "app_name", "NextCut Demo T"
-        }
 
-
-        mock {
+        dev {
             dimension "default"
             applicationId "traore.adama.nextcut_android.mock"
-            resValue "string", "app_name", "NextCut Mock"
+            resValue "string", "app_name", "NextCut Dev"
         }
     }
 
@@ -73,6 +67,8 @@ dependencies {
     //Room
     implementation "android.arch.persistence.room:runtime:1.1.1"
     annotationProcessor "android.arch.persistence.room:compiler:1.1.1"
+
+    //Android Lifecycle
 
     // Gson
     implementation "com.google.code.gson:gson:2.8.5"
