@@ -6,11 +6,12 @@ import android.arch.persistence.room.PrimaryKey
 
 @Entity(tableName = "nextcuter")
 class Nextcuter(
-    var price: Int?,
-    var firstname: String,
-    var lastname: String,
-    var description: String?,
-    var isFav: Boolean = true
+    @PrimaryKey(autoGenerate = true) var id: Long?,
+    @ColumnInfo(name = "price") var price: Int?,
+    @ColumnInfo(name = "firstname") var firstname: String,
+    @ColumnInfo(name = "lastname") var lastname: String,
+    @ColumnInfo(name = "description") var description: String?,
+    @ColumnInfo(name = "isFav") var isFav: Boolean = true
 )
 /*
 class Nextcuter (

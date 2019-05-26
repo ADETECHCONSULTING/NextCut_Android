@@ -31,7 +31,7 @@ class HomeFragment : Fragment(), LifecycleOwner {
 
         adapter = NextcuterAdapter()
         rcvMain.setHasFixedSize(true)
-        rcvMain.layoutManager = GridLayoutManager(context, resources.getInteger(R.integer.column_count))
+        rcvMain.layoutManager = GridLayoutManager(context, 1)
         rcvMain.adapter = adapter
 
         setToolbarTitle(getString(R.string.app_name))

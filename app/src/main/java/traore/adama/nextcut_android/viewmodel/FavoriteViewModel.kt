@@ -6,7 +6,7 @@ import android.arch.lifecycle.MutableLiveData
 import traore.adama.nextcut_android.database.NextCutDatabase
 import traore.adama.nextcut_android.database.model.Nextcuter
 
-class FavoriteViewModel(application: Application) : BaseViewModelContext(application) {
+public class FavoriteViewModel(application: Application) : BaseViewModelContext(application) {
     private var favoritesList: LiveData<List<Nextcuter>>
 
     init {

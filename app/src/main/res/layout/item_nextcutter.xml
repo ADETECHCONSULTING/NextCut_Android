@@ -6,20 +6,18 @@
                                     android:layout_height="wrap_content"
                                     android:layout_margin="4dp"
                                     android:foreground="?android:attr/selectableItemBackground">
-    <LinearLayout
+    <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:padding="8dp">
         
-
 
             <TextView
                     android:id="@+id/txvPrice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="end"
-                    android:gravity="end"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
                     style="@style/TextViewPrice"
                     android:padding="@dimen/padding_14"
                     tools:text="195€"
@@ -30,34 +28,40 @@
                 android:id="@+id/imvImage"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/img_height_nextcutter"
+                app:layout_constraintTop_toBottomOf="@id/txvPrice"
                 android:layout_gravity="center"
                 android:scaleType="fitCenter"/>
 
-    <LinearLayout android:layout_width="match_parent"
-                  android:layout_height="wrap_content"
-                  android:orientation="horizontal">
 
         <TextView
                 android:id="@+id/txvBarberName"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.7"
-                android:gravity="start"
                 style="@style/TextViewSubTitle"
                 android:padding="@dimen/padding_14"
+                android:gravity="start"
+                android:ellipsize="end"
+                app:layout_constraintTop_toBottomOf="@id/imvImage"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/imbFavorite"
                 tools:text="Elige Eliko"
+                android:layout_marginEnd="@dimen/margin_12dp"
                 android:textStyle="bold"/>
 
-        <ImageButton
+        <CheckBox
                 android:id="@+id/imbFavorite"
-                style="?android:attr/actionButtonStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.3"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_gravity="end"
+                android:button="@null"
+                android:checked="false"
+                app:layout_constraintTop_toBottomOf="@id/imvImage"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
                 android:minWidth="@dimen/min_width_fav_button"
-                app:srcCompat="@drawable/ic_favorite_border_black"/>
+                android:background="@drawable/like_icon_statelist"
+                android:stateListAnimator="@animator/like_scale"
+        />
 
-    </LinearLayout>
-    </LinearLayout>
+    </android.support.constraint.ConstraintLayout>
 </android.support.v7.widget.CardView>

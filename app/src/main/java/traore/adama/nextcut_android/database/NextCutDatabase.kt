@@ -10,7 +10,7 @@ import traore.adama.nextcut_android.database.dao.NextcuterDao
 import traore.adama.nextcut_android.database.model.Haircut
 import traore.adama.nextcut_android.database.model.Nextcuter
 
-@Database(entities = arrayOf(Haircut::class, Nextcuter::class), version = 1)
+@Database(entities = arrayOf(Haircut::class, Nextcuter::class), version = 2)
 abstract class NextCutDatabase: RoomDatabase(){
     abstract fun haircutDao() : HaircutDao
     abstract fun nextcuterDao(): NextcuterDao
