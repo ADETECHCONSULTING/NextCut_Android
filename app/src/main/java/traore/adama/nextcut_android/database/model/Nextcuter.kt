@@ -4,12 +4,13 @@ import android.arch.persistence.room.ColumnInfo
 import android.arch.persistence.room.Entity
 import android.arch.persistence.room.PrimaryKey
 
-//@Entity(tableName = "nextcuter")
+@Entity(tableName = "nextcuter")
 class Nextcuter(
     var price: Int?,
     var firstname: String,
     var lastname: String,
-    var description: String?
+    var description: String?,
+    var isFav: Boolean = true
 )
 /*
 class Nextcuter (

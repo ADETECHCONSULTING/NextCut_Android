@@ -2,8 +2,6 @@ package traore.adama.nextcut_android.ui.fragment
 
 import android.arch.lifecycle.*
 import android.os.Bundle
-import android.support.design.widget.BottomNavigationView
-import android.support.design.widget.CoordinatorLayout
 import android.support.v4.app.Fragment
 import android.support.v7.widget.GridLayoutManager
 import android.view.LayoutInflater
@@ -17,7 +15,6 @@ import traore.adama.nextcut_android.viewmodel.HomeViewModel
 
 class HomeFragment : Fragment(), LifecycleOwner {
     private lateinit var adapter : NextcuterAdapter
-    private var behavior : CoordinatorLayout.Behavior<BottomNavigationView>? = null
     private lateinit var lifecycleRegistry: LifecycleRegistry
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -36,9 +33,6 @@ class HomeFragment : Fragment(), LifecycleOwner {
         rcvMain.setHasFixedSize(true)
         rcvMain.layoutManager = GridLayoutManager(context, resources.getInteger(R.integer.column_count))
         rcvMain.adapter = adapter
-
-
-        //adapter.swapData(list)
 
         setToolbarTitle(getString(R.string.app_name))
     }
@@ -59,7 +53,7 @@ class HomeFragment : Fragment(), LifecycleOwner {
 
     //region functions
     fun setToolbarTitle(title: String){
-        toolbar.setTitle(title)
+        toolbar.title = title
     }
 
 
