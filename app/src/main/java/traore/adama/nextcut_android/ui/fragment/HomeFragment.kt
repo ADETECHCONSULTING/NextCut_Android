@@ -1,43 +1,41 @@
 package traore.adama.nextcut_android.ui.fragment
 
-import android.content.Context
+import android.arch.lifecycle.*
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.design.widget.CoordinatorLayout
 import android.support.v4.app.Fragment
 import android.support.v7.widget.GridLayoutManager
-import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.FrameLayout
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.fragment_nextcuters.*
 import traore.adama.nextcut_android.R
 import traore.adama.nextcut_android.database.model.Nextcuter
-import traore.adama.nextcut_android.ui.adapter.ExploreAdapter
 import traore.adama.nextcut_android.ui.adapter.NextcuterAdapter
-import java.util.*
-import kotlinx.android.synthetic.main.fragment_nextcuters.*
-import traore.adama.nextcut_android.ui.MainActivity
+import traore.adama.nextcut_android.viewmodel.HomeViewModel
 
-class HomeFragment : Fragment() {
-
-    private var behavior: CoordinatorLayout.Behavior<BottomNavigationView>? = null
+class HomeFragment : Fragment(), LifecycleOwner {
+    private lateinit var adapter : NextcuterAdapter
+    private var behavior : CoordinatorLayout.Behavior<BottomNavigationView>? = null
+    private lateinit var lifecycleRegistry: LifecycleRegistry
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
+        lifecycleRegistry = LifecycleRegistry(this)
+        lifecycleRegistry.markState(Lifecycle.State.CREATED)
         return inflater.inflate(R.layout.fragment_nextcuters, container, false)
     }
 
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
-        val adapter = NextcuterAdapter()
+        lifecycleRegistry.markState(Lifecycle.State.STARTED)
+
+        adapter = NextcuterAdapter()
         rcvMain.setHasFixedSize(true)
         rcvMain.layoutManager = GridLayoutManager(context, resources.getInteger(R.integer.column_count))
         rcvMain.adapter = adapter
-
 
 
         //adapter.swapData(list)
@@ -45,9 +43,33 @@ class HomeFragment : Fragment() {
         setToolbarTitle(getString(R.string.app_name))
     }
 
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+
+        val viewModel = ViewModelProviders.of(this).get(HomeViewModel::class.java)
+
+        observeViewModel(viewModel)
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+
+        lifecycleRegistry.markState(Lifecycle.State.DESTROYED)
+    }
+
     //region functions
     fun setToolbarTitle(title: String){
         toolbar.setTitle(title)
+    }
+
+
+    fun observeViewModel(viewModel: HomeViewModel){
+        //update list when data changes
+        viewModel.getNextcuters().observe(this, Observer<List<Nextcuter>> { list ->
+            list?.let {
+                adapter.swapData(list)
+            }
+        } )
     }
 
 }

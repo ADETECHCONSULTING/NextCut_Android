@@ -2,11 +2,17 @@ package traore.adama.nextcut_android.service.repository
 
 import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.MutableLiveData
+import org.jetbrains.annotations.Nullable
 import traore.adama.nextcut_android.R
 import traore.adama.nextcut_android.database.model.Nextcuter
 import java.util.*
 
 public class NextcuterRepository {
+
+
+    companion object {
+        val instance = NextcuterRepository()
+    }
 
     fun getNextcuters():LiveData<List<Nextcuter>>{
         val data = MutableLiveData<List<Nextcuter>>()
