@@ -6,4 +6,7 @@
     <dimen name="img_height_nextcutter">192dp</dimen>
     <dimen name="appbarlayout_height">400dp</dimen>
     <dimen name="margin_12dp">12dp</dimen>
+    <dimen name="background_login_height">400dp</dimen>
+    <dimen name="padding_login_container">20dp</dimen>
+    <dimen name="small_elevation">5dp</dimen>
 </resources>

@@ -7,4 +7,5 @@
     <color name="colorBlack">#E6000000</color>
     <color name="colorBlackMediumEmphasis">#99000000</color>
     <color name="colorBlackDisabled">#4D000000</color>
+    <color name="colorWhiteDark">#F2F2F2</color>
 </resources>

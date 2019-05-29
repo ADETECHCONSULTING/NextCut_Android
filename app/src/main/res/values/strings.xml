@@ -16,4 +16,11 @@
         Barbier.
     </string>
     <string name="nextcut_db">nextcut.db</string>
+    <string name="password">password</string>
+    <string name="full_name">Full name</string>
+    <string name="nextcuter">Nextcuter</string>
+    <string name="false_email">nextcut.contact@gmail.com</string>
+    <string name="email">email</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="nextcut_logo">nextcut_logo</string>
 </resources>

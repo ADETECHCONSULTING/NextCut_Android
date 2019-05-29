@@ -10,26 +10,24 @@ import android.view.ViewGroup
 import kotlinx.android.synthetic.main.fragment_nextcuters.*
 import traore.adama.nextcut_android.R
 import traore.adama.nextcut_android.database.model.Nextcuter
+import traore.adama.nextcut_android.extensions.shortToast
+import traore.adama.nextcut_android.interfaces.IListItemClick
 import traore.adama.nextcut_android.ui.adapter.NextcuterAdapter
 import traore.adama.nextcut_android.viewmodel.HomeViewModel
 
-class HomeFragment : Fragment(), LifecycleOwner {
+class HomeFragment : Fragment(), IListItemClick<Nextcuter> {
+
     private lateinit var adapter : NextcuterAdapter
-    private lateinit var lifecycleRegistry: LifecycleRegistry
+    private lateinit var viewModel: HomeViewModel
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
-        lifecycleRegistry = LifecycleRegistry(this)
-        lifecycleRegistry.markState(Lifecycle.State.CREATED)
         return inflater.inflate(R.layout.fragment_nextcuters, container, false)
     }
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
-        lifecycleRegistry.markState(Lifecycle.State.STARTED)
-
-        adapter = NextcuterAdapter()
+        adapter = NextcuterAdapter(this)
         rcvMain.setHasFixedSize(true)
         rcvMain.layoutManager = GridLayoutManager(context, 1)
         rcvMain.adapter = adapter
@@ -40,16 +38,11 @@ class HomeFragment : Fragment(), LifecycleOwner {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        val viewModel = ViewModelProviders.of(this).get(HomeViewModel::class.java)
+        viewModel = ViewModelProviders.of(this).get(HomeViewModel::class.java)
 
         observeViewModel(viewModel)
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-
-        lifecycleRegistry.markState(Lifecycle.State.DESTROYED)
-    }
 
     //region functions
     fun setToolbarTitle(title: String){
@@ -59,11 +52,16 @@ class HomeFragment : Fragment(), LifecycleOwner {
 
     fun observeViewModel(viewModel: HomeViewModel){
         //update list when data changes
-        viewModel.getNextcuters().observe(this, Observer<List<Nextcuter>> { list ->
+        //To avoid Leaking LiveData observers in Fragments, the recommended solution is to use fragment’s view lifecycle via getViewLifecycleOwner()
+        viewModel.getNextcuters().observe(viewLifecycleOwner, Observer<List<Nextcuter>> { list ->
             list?.let {
                 adapter.swapData(list)
             }
         } )
+    }
+
+    override fun itemClicked(item: Nextcuter, view: View) {
+        shortToast(view.id.toString())
     }
 
 }
