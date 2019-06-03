@@ -35,7 +35,7 @@
     <Button
             android:id="@+id/btnGoogleConnect"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/button_height"
             android:text="@string/login_with_google"
             style="@style/ButtonsConnexion"
             android:drawableStart="@drawable/ic_google"
@@ -46,14 +46,16 @@
             android:layout_marginTop="@dimen/btn_connexion_margin_top"
             app:layout_constraintTop_toBottomOf="@+id/txvSubTitleBrand"/>
 
-    <Button
+    <com.facebook.login.widget.LoginButton
             android:id="@+id/btnFacebookConnect"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/button_height"
             android:text="@string/login_with_facebook"
-            style="@style/ButtonsConnexion"
+            style="@style/ButtonsConnexionFacebook"
             android:drawableStart="@drawable/ic_facebook"
             app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
             android:layout_marginStart="@dimen/btn_connexion_margin_horizontal"
             app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
             android:layout_marginEnd="@dimen/btn_connexion_margin_horizontal"
@@ -63,7 +65,7 @@
     <Button
             android:id="@+id/btnMailConnect"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/button_height"
             android:text="@string/login_with_email_address"
             style="@style/ButtonsConnexion"
             android:drawableStart="@drawable/ic_email"

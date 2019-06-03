@@ -73,6 +73,13 @@
         <item name="android:textColor">@color/colorBlack</item>
     </style>
 
+    <style name="ButtonsConnexionFacebook" parent="RobotoRegular">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:colorButtonNormal">@color/colorWhite</item>
+        <item name="android:colorControlHighlight">@color/colorAccent</item>
+    </style>
+
     <!-- textviews styles -->
     <style name="TextViewBrand" parent="RobotoRegular">
         <item name="android:textSize">16sp</item>
