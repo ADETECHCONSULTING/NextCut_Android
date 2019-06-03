@@ -15,6 +15,7 @@ import com.facebook.login.LoginResult
 import com.google.firebase.auth.FacebookAuthProvider
 import traore.adama.nextcut_android.R
 import kotlinx.android.synthetic.main.activity_login.*
+import kotlinx.android.synthetic.main.button_facebook.*
 import traore.adama.nextcut_android.extensions.shortToast
 import traore.adama.nextcut_android.viewmodel.LoginViewModel
 
@@ -42,8 +43,12 @@ class LoginActivity : AppCompatActivity() {
 
         callbackManager = CallbackManager.Factory.create()
 
-        btnFacebookConnect.setReadPermissions("email", "public_profile")
-        btnFacebookConnect.registerCallback(callbackManager, object : FacebookCallback<LoginResult> {
+        btnFacebookConnexion.setOnClickListener {
+            loginButton.performClick()
+        }
+
+        loginButton.setReadPermissions("email", "public_profile")
+        loginButton.registerCallback(callbackManager, object : FacebookCallback<LoginResult> {
             override fun onSuccess(result: LoginResult) {
                 handleFacebookAccessToken(result.accessToken)
             }

@@ -46,16 +46,12 @@
             android:layout_marginTop="@dimen/btn_connexion_margin_top"
             app:layout_constraintTop_toBottomOf="@+id/txvSubTitleBrand"/>
 
-    <com.facebook.login.widget.LoginButton
-            android:id="@+id/btnFacebookConnect"
+    <include
+            android:id="@+id/includeBtnFacebookConnexion"
             android:layout_width="0dp"
             android:layout_height="@dimen/button_height"
-            android:text="@string/login_with_facebook"
-            style="@style/ButtonsConnexionFacebook"
-            android:drawableStart="@drawable/ic_facebook"
+            layout="@layout/button_facebook"
             app:layout_constraintStart_toStartOf="@+id/guidelineStart"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
             android:layout_marginStart="@dimen/btn_connexion_margin_horizontal"
             app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
             android:layout_marginEnd="@dimen/btn_connexion_margin_horizontal"
@@ -74,7 +70,7 @@
             app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
             android:layout_marginEnd="@dimen/btn_connexion_margin_horizontal"
             android:layout_marginTop="@dimen/btn_connexion_margin_top_secondary"
-            app:layout_constraintTop_toBottomOf="@id/btnFacebookConnect"/>
+            app:layout_constraintTop_toBottomOf="@id/includeBtnFacebookConnexion"/>
 
     <TextView
             android:id="@+id/txvRegisterLabel"

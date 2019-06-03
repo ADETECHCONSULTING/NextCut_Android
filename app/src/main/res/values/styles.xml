@@ -119,7 +119,7 @@
 
     <style name="TextViewPrice" parent="RobotoRegular">
         <item name="android:textSize">16sp</item>
-        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:textColor">@color/colorPrimary</item>
         <item name="android:gravity">center</item>
     </style>
 
@@ -157,7 +157,6 @@
     <style name="RobotoBold">
         <item name="android:font">@font/roboto_bold</item>
     </style>
-
 
     <style name="RobotoThin">
         <item name="android:fontFamily">@font/roboto_family</item>

@@ -13,4 +13,6 @@
     <dimen name="btn_connexion_margin_top">34dp</dimen>
     <dimen name="btn_connexion_margin_top_secondary">8dp</dimen>
     <dimen name="button_height">50dp</dimen>
+    <dimen name="margin_start_textview_item">8dp</dimen>
+    <dimen name="margin_top_textview_item">8dp</dimen>
 </resources>

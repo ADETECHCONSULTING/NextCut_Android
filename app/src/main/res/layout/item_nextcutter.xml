@@ -10,28 +10,32 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="8dp">
-        
 
-            <TextView
-                    android:id="@+id/txvPrice"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    style="@style/TextViewPrice"
-                    android:padding="@dimen/padding_14"
-                    tools:text="195€"
-                    android:textStyle="bold"/>
 
 
         <ImageView
                 android:id="@+id/imvImage"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/img_height_nextcutter"
-                app:layout_constraintTop_toBottomOf="@id/txvPrice"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:background="@color/colorPrimary"
                 android:layout_gravity="center"
                 android:scaleType="fitCenter"/>
 
+        <TextView
+                android:id="@+id/txvPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/TextViewPrice"
+                android:padding="@dimen/padding_14"
+                android:background="@drawable/shape_price"
+                app:layout_constraintTop_toTopOf="@id/imvImage"
+                app:layout_constraintStart_toStartOf="@id/imvImage"
+                android:layout_marginStart="@dimen/margin_start_textview_item"
+                android:layout_marginTop="@dimen/margin_top_textview_item"
+                tools:text="195€"
+                android:textStyle="bold"/>
 
         <TextView
                 android:id="@+id/txvBarberName"
