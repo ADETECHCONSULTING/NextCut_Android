@@ -28,11 +28,11 @@
             app:layout_constraintEnd_toEndOf="@+id/txvBrand"
             app:layout_constraintStart_toStartOf="@+id/txvBrand"
             style="@style/TextViewTitle"
-            android:text="@string/welcome_back"/>
+            android:text="@string/brand_subtitle"/>
 
 
     <Button
-            android:id="@+id/btnGoogleConnect"
+            android:id="@+id/btnGoogleRegister"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/register_with_google"
@@ -46,7 +46,7 @@
             app:layout_constraintTop_toBottomOf="@+id/txvSubTitleBrand"/>
 
     <Button
-            android:id="@+id/btnFacebookConnect"
+            android:id="@+id/btnFacebookRegister"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/register_with_facebook"
@@ -57,10 +57,10 @@
             app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
             android:layout_marginEnd="@dimen/btn_connexion_margin_horizontal"
             android:layout_marginTop="@dimen/btn_connexion_margin_top_secondary"
-            app:layout_constraintTop_toBottomOf="@id/btnGoogleConnect"/>
+            app:layout_constraintTop_toBottomOf="@id/btnGoogleRegister"/>
 
     <Button
-            android:id="@+id/btnMailConnect"
+            android:id="@+id/btnMailRegister"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/register_with_email_address"
@@ -71,29 +71,29 @@
             app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
             android:layout_marginEnd="@dimen/btn_connexion_margin_horizontal"
             android:layout_marginTop="@dimen/btn_connexion_margin_top_secondary"
-            app:layout_constraintTop_toBottomOf="@id/btnFacebookConnect"/>
+            app:layout_constraintTop_toBottomOf="@id/btnFacebookRegister"/>
 
     <TextView
-            android:id="@+id/txvRegisterLabel"
+            android:id="@+id/txvLoginLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/btn_connexion_margin_top_secondary"
-            app:layout_constraintTop_toBottomOf="@id/btnMailConnect"
-            app:layout_constraintStart_toStartOf="@+id/btnMailConnect"
+            app:layout_constraintTop_toBottomOf="@id/btnMailRegister"
+            app:layout_constraintStart_toStartOf="@+id/btnMailRegister"
             style="@style/TextViewContentWhite"
-            android:text="@string/not_yet_registered"/>
+            android:text="@string/already_registered"/>
 
     <TextView
-            android:id="@+id/txvRegisterLink"
+            android:id="@+id/txvLoginLink"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/btn_connexion_margin_top_secondary"
-            app:layout_constraintTop_toBottomOf="@id/btnMailConnect"
-            app:layout_constraintStart_toEndOf="@id/txvRegisterLabel"
+            app:layout_constraintTop_toBottomOf="@id/btnMailRegister"
+            app:layout_constraintStart_toEndOf="@id/txvLoginLabel"
             style="@style/TextViewContentWhite"
-            android:layout_marginStart="@dimen/btn_connexion_margin_horizontal"
             android:gravity="start"
-            android:text="@string/register_here" android:layout_marginEnd="8dp"
+            android:layout_marginStart="@dimen/btn_connexion_margin_horizontal"
+            android:text="@string/login_here" android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"/>
 
 

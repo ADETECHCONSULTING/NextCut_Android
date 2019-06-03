@@ -27,5 +27,9 @@
     <string name="register_with_facebook">Register with Facebook</string>
     <string name="register_with_google">Register with Google</string>
     <string name="register_with_email_address">Register with email address</string>
-    <string name="login_here"><u>Login here</u></string>
+    <string name="login_here"><u>Login here.</u></string>
+    <string name="welcome_back">Welcome back.</string>
+    <string name="already_registered">Already registered ?</string>
+    <string name="not_yet_registered">Not yet registered ?</string>
+    <string name="register_here"><u>Register here.</u></string>
 </resources>
