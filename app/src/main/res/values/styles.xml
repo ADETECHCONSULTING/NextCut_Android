@@ -6,6 +6,8 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorButtonNormal">@color/colorWhite</item>
+        <item name="colorControlHighlight">@color/colorAccent</item>
     </style>
 
 
@@ -65,10 +67,22 @@
         <item name="android:orientation">vertical</item>
     </style>
 
+    <!-- buttons styles -->
+    <style name="ButtonsConnexion" parent="RobotoRegular">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">@color/colorBlack</item>
+    </style>
 
     <!-- textviews styles -->
     <style name="TextViewBrand" parent="RobotoRegular">
         <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="TextViewBrandTitle" parent="RobotoBold">
+        <item name="android:textSize">36sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/colorWhite</item>
         <item name="android:gravity">center</item>
@@ -113,6 +127,14 @@
         <item name="android:textColor">@color/colorBlackMediumEmphasis</item>
     </style>
 
+    <style name="TextViewContentWhite" parent="RobotoThin">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:gravity">center</item>
+        <item name="android:lines">1</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
     <style name="TextViewContent" parent="RobotoThin">
         <item name="android:textSize">13sp</item>
         <item name="android:textColor">@color/colorBlackMediumEmphasis</item>
@@ -124,6 +146,11 @@
         <item name="android:fontFamily">@font/roboto_family</item>
         <item name="android:fontStyle">normal</item>
     </style>
+
+    <style name="RobotoBold">
+        <item name="android:font">@font/roboto_bold</item>
+    </style>
+
 
     <style name="RobotoThin">
         <item name="android:fontFamily">@font/roboto_family</item>

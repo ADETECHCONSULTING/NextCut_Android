@@ -23,4 +23,9 @@
     <string name="email">email</string>
     <string name="sign_up">Sign Up</string>
     <string name="nextcut_logo">nextcut_logo</string>
+    <string name="brand_subtitle">Get your fresh cut whenever you want wherever you want</string>
+    <string name="register_with_facebook">Register with Facebook</string>
+    <string name="register_with_google">Register with Google</string>
+    <string name="register_with_email_address">Register with email address</string>
+    <string name="login_here"><u>Login here</u></string>
 </resources>

@@ -9,4 +9,7 @@
     <dimen name="background_login_height">400dp</dimen>
     <dimen name="padding_login_container">20dp</dimen>
     <dimen name="small_elevation">5dp</dimen>
+    <dimen name="btn_connexion_margin_horizontal">8dp</dimen>
+    <dimen name="btn_connexion_margin_top">34dp</dimen>
+    <dimen name="btn_connexion_margin_top_secondary">8dp</dimen>
 </resources>
