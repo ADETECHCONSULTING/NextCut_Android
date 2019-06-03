@@ -24,6 +24,7 @@
             android:id="@+id/txvSubTitleBrand"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:minLines="2"
             app:layout_constraintTop_toBottomOf="@id/txvBrand"
             app:layout_constraintEnd_toEndOf="@+id/txvBrand"
             app:layout_constraintStart_toStartOf="@+id/txvBrand"
@@ -35,7 +36,7 @@
             android:id="@+id/btnGoogleConnect"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@string/register_with_google"
+            android:text="@string/login_with_google"
             style="@style/ButtonsConnexion"
             android:drawableStart="@drawable/ic_google"
             app:layout_constraintStart_toStartOf="@+id/guidelineStart"
@@ -49,7 +50,7 @@
             android:id="@+id/btnFacebookConnect"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@string/register_with_facebook"
+            android:text="@string/login_with_facebook"
             style="@style/ButtonsConnexion"
             android:drawableStart="@drawable/ic_facebook"
             app:layout_constraintStart_toStartOf="@+id/guidelineStart"
@@ -63,7 +64,7 @@
             android:id="@+id/btnMailConnect"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@string/register_with_email_address"
+            android:text="@string/login_with_email_address"
             style="@style/ButtonsConnexion"
             android:drawableStart="@drawable/ic_email"
             app:layout_constraintStart_toStartOf="@+id/guidelineStart"
@@ -97,20 +98,23 @@
             app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"/>
 
 
-    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
-                                          android:id="@+id/guidelineTop"
-                                          android:orientation="horizontal"
-                                          app:layout_constraintGuide_percent="0.2"/>
+    <android.support.constraint.Guideline
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:id="@+id/guidelineTop"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.2"/>
 
-    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
-                                          android:id="@+id/guidelineStart"
-                                          android:orientation="vertical"
-                                          app:layout_constraintGuide_percent="0.15"/>
+    <android.support.constraint.Guideline
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:id="@+id/guidelineStart"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.15"/>
 
-    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
-                                          android:id="@+id/guidelineEnd"
-                                          android:orientation="vertical"
-                                          app:layout_constraintGuide_percent="0.85"/>
+    <android.support.constraint.Guideline
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:id="@+id/guidelineEnd"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.85"/>
 
 
 </android.support.constraint.ConstraintLayout>
