@@ -25,6 +25,7 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var callbackManager: CallbackManager
     private lateinit var loginViewModel: LoginViewModel
 
+
     /**
      * Launch method -> start activity
      */
@@ -45,6 +46,10 @@ class LoginActivity : AppCompatActivity() {
 
         btnFacebookConnexion.setOnClickListener {
             loginButton.performClick()
+        }
+
+        btnGoogleConnect.setOnClickListener {
+            loginViewModel.signInGoogle(this)
         }
 
         loginButton.setReadPermissions("email", "public_profile")
@@ -68,6 +73,9 @@ class LoginActivity : AppCompatActivity() {
 
         //Pass the activity result back to the Facebook SDK
         callbackManager.onActivityResult(requestCode, resultCode, data)
+
+        //Pass the activity result back to the Google SDK
+        loginViewModel.activityForResultLogin(requestCode, resultCode, data, this)
     }
 
     override fun onStart() {
