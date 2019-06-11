@@ -4,10 +4,10 @@ import android.app.Application
 import android.arch.lifecycle.AndroidViewModel
 import android.arch.lifecycle.ViewModel
 
-open class BaseViewModel : ViewModel() {
+abstract class BaseViewModel : ViewModel() {
 
 }
 
-open class BaseViewModelContext(application: Application): AndroidViewModel(application){
+abstract class BaseViewModelContext(application: Application): AndroidViewModel(application){
 
 }

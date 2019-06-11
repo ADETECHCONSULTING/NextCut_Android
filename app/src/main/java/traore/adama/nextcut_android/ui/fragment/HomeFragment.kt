@@ -7,10 +7,9 @@ import android.support.v7.widget.GridLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import kotlinx.android.synthetic.main.fragment_nextcuters.*
 import traore.adama.nextcut_android.R
 import traore.adama.nextcut_android.database.model.Nextcuter
-import traore.adama.nextcut_android.extensions.shortToast
+import traore.adama.nextcut_android.utils.extensions.shortToast
 import traore.adama.nextcut_android.interfaces.IListItemClick
 import traore.adama.nextcut_android.ui.adapter.NextcuterAdapter
 import traore.adama.nextcut_android.viewmodel.HomeViewModel

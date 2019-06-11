@@ -1,10 +1,9 @@
-package traore.adama.nextcut_android.extensions
+package traore.adama.nextcut_android.utils.extensions
 
 import android.app.Activity
 import android.support.v4.app.Fragment
 import android.util.Log
 import android.widget.Toast
-import traore.adama.nextcut_android.BuildConfig
 
 fun Activity.logd(message: String){
     Log.d(this::class.java.simpleName, message)

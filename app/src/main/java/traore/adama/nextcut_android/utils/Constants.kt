@@ -1,4 +1,4 @@
-package traore.adama.nextcut_android
+package traore.adama.nextcut_android.utils
 
 class Constants {
 

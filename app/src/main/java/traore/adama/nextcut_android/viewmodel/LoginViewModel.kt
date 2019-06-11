@@ -2,11 +2,8 @@ package traore.adama.nextcut_android.viewmodel
 
 import android.app.Activity
 import android.app.Application
-import android.arch.lifecycle.ViewModel
 import android.content.Intent
-import android.support.design.widget.Snackbar
 import android.util.Log
-import android.widget.Toast
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -14,9 +11,9 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
-import traore.adama.nextcut_android.Constants
+import traore.adama.nextcut_android.utils.Constants
 import traore.adama.nextcut_android.R
-import traore.adama.nextcut_android.extensions.shortToast
+import traore.adama.nextcut_android.utils.extensions.shortToast
 
 class LoginViewModel(application: Application) : BaseViewModelContext(application) {
 

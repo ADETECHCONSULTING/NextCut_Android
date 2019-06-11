@@ -6,7 +6,6 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.Toast
 import com.facebook.AccessToken
 import com.facebook.CallbackManager
 import com.facebook.FacebookCallback
@@ -16,7 +15,7 @@ import com.google.firebase.auth.FacebookAuthProvider
 import traore.adama.nextcut_android.R
 import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.button_facebook.*
-import traore.adama.nextcut_android.extensions.shortToast
+import traore.adama.nextcut_android.utils.extensions.shortToast
 import traore.adama.nextcut_android.viewmodel.LoginViewModel
 
 class LoginActivity : AppCompatActivity() {
