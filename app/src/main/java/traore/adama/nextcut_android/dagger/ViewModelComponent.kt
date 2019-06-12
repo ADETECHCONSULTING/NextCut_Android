@@ -1,7 +1,7 @@
 package traore.adama.nextcut_android.dagger
 
 import dagger.Component
-import traore.adama.nextcut_android.viewmodel.HaircutViewModel
+import traore.adama.nextcut_android.viewmodel.ExploreViewModel
 import javax.inject.Singleton
 
 @Singleton
@@ -9,10 +9,10 @@ import javax.inject.Singleton
 interface ViewModelComponent{
 
     /**
-     * Injects required dependencies into the specified HaircutViewModel.
-     * @param haircutViewModel HaircutViewModel in which to inject the dependencies
+     * Injects required dependencies into the specified ExploreViewModel.
+     * @param exploreViewModel ExploreViewModel in which to inject the dependencies
      */
-    fun inject(haircutViewModel: HaircutViewModel)
+    fun inject(exploreViewModel: ExploreViewModel)
 
 
     @Component.Builder
