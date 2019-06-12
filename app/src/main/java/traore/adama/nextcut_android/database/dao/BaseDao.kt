@@ -1,6 +1,6 @@
 package traore.adama.nextcut_android.database.dao
 
-import android.arch.persistence.room.*
+import androidx.room.*
 
 @Dao
 interface BaseDao<T> {

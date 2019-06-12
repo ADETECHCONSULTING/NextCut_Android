@@ -1,8 +1,8 @@
 package traore.adama.nextcut_android.database.dao
 
-import android.arch.lifecycle.LiveData
-import android.arch.persistence.room.Dao
-import android.arch.persistence.room.Query
+import androidx.lifecycle.LiveData
+import androidx.room.Dao
+import androidx.room.Query
 import traore.adama.nextcut_android.database.model.Nextcuter
 
 @Dao

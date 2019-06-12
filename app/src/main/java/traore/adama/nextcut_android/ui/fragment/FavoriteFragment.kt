@@ -1,9 +1,9 @@
 package traore.adama.nextcut_android.ui.fragment
 
-import android.arch.lifecycle.*
+import androidx.lifecycle.*
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v7.widget.GridLayoutManager
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.GridLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -43,7 +43,8 @@ class FavoriteFragment : Fragment(), IListItemClick<Nextcuter> {
 
         adapter = NextcuterAdapter(this)
         rcvCategory.setHasFixedSize(true)
-        rcvCategory.layoutManager = GridLayoutManager(context, resources.getInteger(R.integer.column_count))
+        rcvCategory.layoutManager =
+            androidx.recyclerview.widget.GridLayoutManager(context, resources.getInteger(R.integer.column_count))
         rcvCategory.adapter = adapter
 
     }

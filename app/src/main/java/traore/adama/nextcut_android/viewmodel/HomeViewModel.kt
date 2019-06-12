@@ -1,7 +1,7 @@
 package traore.adama.nextcut_android.viewmodel
 
 import android.app.Application
-import android.arch.lifecycle.LiveData
+import androidx.lifecycle.LiveData
 import traore.adama.nextcut_android.database.model.Nextcuter
 import traore.adama.nextcut_android.services.repository.NextcuterRepository
 

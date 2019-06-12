@@ -5,12 +5,12 @@
              android:clipToPadding="false"
              tools:context="traore.adama.nextcut_android.ui.fragment.ExploreFragment">
 
-    <android.support.v7.widget.RecyclerView
+    <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rcvCategory"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:listitem="@layout/item_category"
-            tools:layoutManager="android.support.v7.widget.GridLayoutManager"
+            tools:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
     />
 
 </FrameLayout>

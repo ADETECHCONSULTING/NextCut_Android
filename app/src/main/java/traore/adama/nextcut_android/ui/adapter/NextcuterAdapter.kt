@@ -1,7 +1,7 @@
 package traore.adama.nextcut_android.ui.adapter
 
 import android.graphics.Color
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,7 +11,7 @@ import traore.adama.nextcut_android.database.model.Nextcuter
 import traore.adama.nextcut_android.interfaces.IListItemClick
 import java.util.*
 
-class NextcuterAdapter(var itemClick: IListItemClick<Nextcuter>) : RecyclerView.Adapter<NextcuterAdapter.NextcuterHolder>() {
+class NextcuterAdapter(var itemClick: IListItemClick<Nextcuter>) : androidx.recyclerview.widget.RecyclerView.Adapter<NextcuterAdapter.NextcuterHolder>() {
 
     private var data: List<Nextcuter> = ArrayList()
 
@@ -31,7 +31,7 @@ class NextcuterAdapter(var itemClick: IListItemClick<Nextcuter>) : RecyclerView.
         notifyDataSetChanged()
     }
 
-    class NextcuterHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    class NextcuterHolder(itemView: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView) {
 
         fun bind(item: Nextcuter, itemClick: IListItemClick<Nextcuter>) = with(itemView) {
 

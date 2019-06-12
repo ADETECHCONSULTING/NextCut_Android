@@ -2,7 +2,7 @@ package traore.adama.nextcut_android.ui
 
 import android.animation.Animator
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.util.Log
 import kotlinx.android.synthetic.main.activity_splash_screen.*
 import traore.adama.nextcut_android.R

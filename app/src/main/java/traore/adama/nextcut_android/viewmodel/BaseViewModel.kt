@@ -1,10 +1,13 @@
 package traore.adama.nextcut_android.viewmodel
 
 import android.app.Application
-import android.arch.lifecycle.AndroidViewModel
-import android.arch.lifecycle.ViewModel
+import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.ViewModel
+import traore.adama.nextcut_android.dagger.ViewModelComponent
 
 abstract class BaseViewModel : ViewModel() {
+
+
 
 }
 

@@ -1,9 +1,9 @@
 package traore.adama.nextcut_android.ui
 
 import android.app.Activity
-import android.arch.lifecycle.ViewModelProviders
+import androidx.lifecycle.ViewModelProviders
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import com.facebook.AccessToken
@@ -94,7 +94,7 @@ class LoginActivity : AppCompatActivity() {
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     // Sign in success, get user from id
-                    shortToast("OK")
+                    MainActivity.launch(this)
                 } else {
                     shortToast("NOT OK")
                 }

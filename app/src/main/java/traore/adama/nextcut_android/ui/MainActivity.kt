@@ -3,9 +3,9 @@ package traore.adama.nextcut_android.ui
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
-import android.support.design.widget.CoordinatorLayout
-import android.support.v4.app.Fragment
-import android.support.v4.app.FragmentManager
+import androidx.coordinatorlayout.widget.CoordinatorLayout
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 import android.util.Log
 import android.widget.FrameLayout
 import kotlinx.android.synthetic.main.activity_main.*

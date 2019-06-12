@@ -1,8 +1,8 @@
 package traore.adama.nextcut_android.viewmodel
 
 import android.app.Application
-import android.arch.lifecycle.LiveData
-import android.arch.lifecycle.MutableLiveData
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import traore.adama.nextcut_android.database.NextCutDatabase
 import traore.adama.nextcut_android.database.model.Nextcuter
 
