@@ -17,13 +17,12 @@ import traore.adama.nextcut_android.utils.extensions.shortToast
 
 class LoginViewModel(application: Application) : BaseViewModelContext(application) {
 
-    lateinit var auth: FirebaseAuth
+    var auth: FirebaseAuth = FirebaseAuth.getInstance()
     val Tag: String = LoginViewModel::class.java.simpleName;
     val gso: GoogleSignInOptions
     val googleSignInClient: GoogleSignInClient
 
     init {
-        auth = FirebaseAuth.getInstance()
         gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(application.getString(R.string.default_client_id))
             .build()
