@@ -11,6 +11,7 @@ import android.widget.FrameLayout
 import kotlinx.android.synthetic.main.activity_main.*
 import traore.adama.nextcut_android.R
 import traore.adama.nextcut_android.ui.fragment.CartFragment
+import traore.adama.nextcut_android.ui.fragment.ExploreFragment
 import traore.adama.nextcut_android.ui.fragment.FavoriteFragment
 import traore.adama.nextcut_android.ui.fragment.HomeFragment
 
@@ -60,7 +61,7 @@ class MainActivity : BaseActivity() {
 
     fun updateFragment(itemId: Int) : Boolean{
         when(itemId){
-            R.id.action_fav -> changeFragment(FavoriteFragment())
+            R.id.action_fav -> changeFragment(ExploreFragment())
             R.id.action_home -> changeFragment(HomeFragment())
             R.id.action_cart -> changeFragment(CartFragment())
             else -> {

@@ -5,10 +5,11 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.ViewModel
 import traore.adama.nextcut_android.dagger.DaggerViewModelComponent
 import traore.adama.nextcut_android.dagger.NetworkModule
+import traore.adama.nextcut_android.dagger.ViewModelComponent
 
 abstract class BaseViewModel : ViewModel() {
 
-    private val viewModelComponent = DaggerViewModelComponent
+    private val viewModelComponent: ViewModelComponent = DaggerViewModelComponent
         .builder()
         .networkModule(NetworkModule)
         .build()
@@ -22,7 +23,9 @@ abstract class BaseViewModel : ViewModel() {
      */
     private fun inject(){
         when(this){
-            is ExploreViewModel -> viewModelComponent
+            is ExploreViewModel -> {
+                viewModelComponent
+            }
         }
     }
 }
