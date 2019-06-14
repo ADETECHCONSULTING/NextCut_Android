@@ -1,4 +1,4 @@
-package traore.adama.nextcut_android.dagger
+package traore.adama.nextcut_android.dagger.modules
 
 import dagger.Module
 import dagger.Provides

@@ -4,6 +4,7 @@ import android.app.Activity
 import android.app.Application
 import android.content.Intent
 import android.util.Log
+import androidx.lifecycle.AndroidViewModel
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -15,7 +16,7 @@ import traore.adama.nextcut_android.utils.Constants
 import traore.adama.nextcut_android.R
 import traore.adama.nextcut_android.utils.extensions.shortToast
 
-class LoginViewModel(application: Application) : BaseViewModelContext(application) {
+class LoginViewModel(application: Application) : AndroidViewModel(application) {
 
     var auth: FirebaseAuth = FirebaseAuth.getInstance()
     val Tag: String = LoginViewModel::class.java.simpleName;

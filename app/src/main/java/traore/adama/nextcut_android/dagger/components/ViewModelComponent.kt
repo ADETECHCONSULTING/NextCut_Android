@@ -1,6 +1,7 @@
-package traore.adama.nextcut_android.dagger
+package traore.adama.nextcut_android.dagger.components
 
 import dagger.Component
+import traore.adama.nextcut_android.dagger.modules.NetworkModule
 import traore.adama.nextcut_android.viewmodel.ExploreViewModel
 import javax.inject.Singleton
 
