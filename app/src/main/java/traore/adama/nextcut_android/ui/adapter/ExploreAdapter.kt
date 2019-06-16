@@ -8,7 +8,7 @@ import kotlinx.android.synthetic.main.item_category.view.*
 import traore.adama.nextcut_android.R
 import traore.adama.nextcut_android.database.model.Haircut
 
-class ExploreAdapter : androidx.recyclerview.widget.RecyclerView.Adapter<ExploreAdapter.CategoryHolder>(){
+class ExploreAdapter : RecyclerView.Adapter<ExploreAdapter.CategoryHolder>(){
     var items: List<Haircut> = ArrayList()
 
     fun resetData(items: List<Haircut>){
@@ -30,7 +30,7 @@ class ExploreAdapter : androidx.recyclerview.widget.RecyclerView.Adapter<Explore
         holder.setItems(item)
     }
 
-    class CategoryHolder(itemView: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView){
+    class CategoryHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
 
         val imgCategory = itemView.imv_category
 

@@ -1,5 +1,6 @@
 package traore.adama.nextcut_android.viewmodel
 
+import android.util.Log
 import android.view.View
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -11,6 +12,8 @@ import traore.adama.nextcut_android.services.network.MyWebApi
 import javax.inject.Inject
 
 class ExploreViewModel:BaseViewModel(){
+
+    val Tag: String = ExploreViewModel::class.java.simpleName;
 
     @Inject
     lateinit var myWebApi: MyWebApi
@@ -31,8 +34,8 @@ class ExploreViewModel:BaseViewModel(){
             .doOnSubscribe { onRetrieveHaircutListStart() }
             .doOnTerminate { onRetrieveHaircutListFinish() }
             .subscribe(
-                {onRetrieveHaircutListSuccess()},
-                {onRetrieveHaircutListError()}
+                { onRetrieveHaircutListSuccess() },
+                {error -> onRetrieveHaircutListError(error.localizedMessage) }
             )
     }
 
@@ -42,15 +45,17 @@ class ExploreViewModel:BaseViewModel(){
     }
 
     private fun onRetrieveHaircutListFinish(){
-        loadingVisibility.value = View.GONE
+            loadingVisibility.value = View.GONE
     }
 
     private fun onRetrieveHaircutListSuccess(){
 
     }
 
-    private fun onRetrieveHaircutListError(){
-        errorMessage.value = R.string.haircuts_fetch_error
+    private fun onRetrieveHaircutListError(error: String){
+        errorMessage.value =    R.string.haircuts_fetch_error
+
+        Log.d(Tag, error)
     }
 
 
@@ -60,5 +65,8 @@ class ExploreViewModel:BaseViewModel(){
             subscription.dispose()
     }
 
+    fun getLoadingVisibility() : LiveData<Int> {
+        return loadingVisibility
+    }
 
 }

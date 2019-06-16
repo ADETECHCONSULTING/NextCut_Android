@@ -50,7 +50,7 @@ class ExploreFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val adapter = ExploreAdapter()
-        //rcvHaircuts.adapter = adapter
+        binding.rcvHaircuts.adapter = adapter
 
     }
 

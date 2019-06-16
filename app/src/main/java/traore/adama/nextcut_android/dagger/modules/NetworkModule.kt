@@ -4,11 +4,15 @@ import dagger.Module
 import dagger.Provides
 import dagger.Reusable
 import io.reactivex.schedulers.Schedulers
+import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.moshi.MoshiConverterFactory
 import traore.adama.nextcut_android.services.network.MyWebApi
 import traore.adama.nextcut_android.utils.Constants
+import okhttp3.logging.HttpLoggingInterceptor
+
+
 
 /**
  * Module will provide all the required dependencies
@@ -27,6 +31,18 @@ object NetworkModule{
     }
 
     /**
+     * Provides the logging for retrofit
+     */
+    @Provides
+    @Reusable
+    @JvmStatic
+    internal fun provideLoggingInterceptor() : OkHttpClient {
+        val interceptor = HttpLoggingInterceptor()
+        interceptor.level = HttpLoggingInterceptor.Level.BODY
+        return OkHttpClient.Builder().addInterceptor(interceptor).build()
+    }
+
+    /**
      * Provides the retrofit object for dagger uses
      * Why RxJava2CallAdapterFactory ?
      * A call adapter which uses RxJava 2 for creating observables.
@@ -35,9 +51,10 @@ object NetworkModule{
     @Provides
     @Reusable
     @JvmStatic
-    internal fun provideRetrofitInterface(): Retrofit{
+    internal fun provideRetrofitInterface(client: OkHttpClient): Retrofit{
         return Retrofit.Builder()
             .baseUrl(Constants.BASE_URL)
+            .client(client)
             .addConverterFactory(MoshiConverterFactory.create())
             .addCallAdapterFactory(RxJava2CallAdapterFactory.createWithScheduler(Schedulers.io()))
             .build()
