@@ -10,10 +10,7 @@ import android.util.Log
 import android.widget.FrameLayout
 import kotlinx.android.synthetic.main.activity_main.*
 import traore.adama.nextcut_android.R
-import traore.adama.nextcut_android.ui.fragment.CartFragment
-import traore.adama.nextcut_android.ui.fragment.ExploreFragment
-import traore.adama.nextcut_android.ui.fragment.FavoriteFragment
-import traore.adama.nextcut_android.ui.fragment.HomeFragment
+import traore.adama.nextcut_android.ui.fragment.*
 
 class MainActivity : BaseActivity() {
 
@@ -61,9 +58,10 @@ class MainActivity : BaseActivity() {
 
     fun updateFragment(itemId: Int) : Boolean{
         when(itemId){
-            R.id.action_fav -> changeFragment(ExploreFragment())
-            R.id.action_home -> changeFragment(HomeFragment())
-            R.id.action_cart -> changeFragment(CartFragment())
+            R.id.action_fav -> changeFragment(ExploreFragment.newInstance())
+            R.id.action_home -> changeFragment(HomeFragment.newInstance())
+            R.id.action_cart -> changeFragment(CartFragment.newInstance())
+            R.id.action_profile -> changeFragment(ProfileFragment.newInstance())
             else -> {
                 changeFragment(HomeFragment())
             }

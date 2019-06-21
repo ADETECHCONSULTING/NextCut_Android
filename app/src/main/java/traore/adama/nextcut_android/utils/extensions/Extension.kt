@@ -13,6 +13,10 @@ fun Activity.logd(message: String){
     Log.d(this::class.java.simpleName, message)
 }
 
+fun Fragment.logd(message: String){
+    Log.d(this::class.java.simpleName, message)
+}
+
 fun Activity.shortToast(message: String){
     Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
 }

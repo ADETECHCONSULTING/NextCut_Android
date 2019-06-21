@@ -20,6 +20,12 @@ import traore.adama.nextcut_android.viewmodel.ExploreViewModel
 
 class ExploreFragment : Fragment() {
 
+    companion object {
+        fun newInstance() : ExploreFragment{
+            return ExploreFragment()
+        }
+    }
+
     private lateinit var binding: FragmentExploreBinding
     private lateinit var viewModel: ExploreViewModel
     private var errorSnackbar: Snackbar? = null
@@ -64,5 +70,7 @@ class ExploreFragment : Fragment() {
     private fun hideError(){
         errorSnackbar?.dismiss()
     }
+
+
 
 }

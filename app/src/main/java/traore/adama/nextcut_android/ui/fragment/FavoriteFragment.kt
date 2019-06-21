@@ -9,7 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import kotlinx.android.synthetic.main.activity_splash_screen.*
 import kotlinx.android.synthetic.main.fragment_list.*
-import kotlinx.android.synthetic.main.fragment_nextcuters.*
+import kotlinx.android.synthetic.main.fragment_home.*
 import traore.adama.nextcut_android.R
 import traore.adama.nextcut_android.database.model.Nextcuter
 import traore.adama.nextcut_android.interfaces.IListItemClick
@@ -17,6 +17,12 @@ import traore.adama.nextcut_android.ui.adapter.NextcuterAdapter
 import traore.adama.nextcut_android.viewmodel.FavoriteViewModel
 
 class FavoriteFragment : Fragment(), IListItemClick<Nextcuter> {
+
+    companion object {
+        fun newInstance() : FavoriteFragment{
+            return FavoriteFragment()
+        }
+    }
 
     private lateinit var adapter: NextcuterAdapter
 

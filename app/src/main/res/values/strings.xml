@@ -40,4 +40,5 @@
     <string name="default_client_id">64410353141-qv4rvijjbgl4bsnsdq76e69v9ua321eb.apps.googleusercontent.com</string>
     <string name="retry">Retry</string>
     <string name="haircuts_fetch_error">An error occurred while loading the haircuts</string>
+    <string name="profile">profile</string>
 </resources>

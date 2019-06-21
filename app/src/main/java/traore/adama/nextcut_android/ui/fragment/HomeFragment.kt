@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import kotlinx.android.synthetic.main.fragment_nextcuters.*
+import kotlinx.android.synthetic.main.fragment_home.*
 import traore.adama.nextcut_android.R
 import traore.adama.nextcut_android.database.model.Nextcuter
 import traore.adama.nextcut_android.utils.extensions.shortToast
@@ -17,12 +17,18 @@ import traore.adama.nextcut_android.viewmodel.HomeViewModel
 
 class HomeFragment : Fragment(), IListItemClick<Nextcuter> {
 
+    companion object {
+        fun newInstance() : HomeFragment{
+            return HomeFragment()
+        }
+    }
+
     private lateinit var adapter : NextcuterAdapter
     private lateinit var viewModel: HomeViewModel
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_nextcuters, container, false)
+        return inflater.inflate(R.layout.fragment_home, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
