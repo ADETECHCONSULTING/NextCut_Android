@@ -11,7 +11,7 @@ public class FavoriteViewModel(application: Application) : AndroidViewModel(appl
     private var favoritesList: LiveData<List<Nextcuter>>
 
     init {
-        favoritesList = NextCutDatabase.getInstance(application.applicationContext)?.nextcuterDao()?.getAllFavorites()!!
+        favoritesList = NextCutDatabase.getInstance(application.applicationContext)?.nextcuterDao()?.getAll()!!
     }
 
 

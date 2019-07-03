@@ -33,7 +33,7 @@ class HomeFragment : Fragment(), IListItemClick<Nextcuter> {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
-        adapter = NextcuterAdapter(this)
+        adapter = NextcuterAdapter(activity?.application!!)
         rcvMain.setHasFixedSize(true)
         rcvMain.layoutManager = GridLayoutManager(context, 1)
         rcvMain.adapter = adapter

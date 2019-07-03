@@ -7,13 +7,16 @@ import android.content.Context
 import traore.adama.nextcut_android.R
 import traore.adama.nextcut_android.database.dao.HaircutDao
 import traore.adama.nextcut_android.database.dao.NextcuterDao
+import traore.adama.nextcut_android.database.dao.PrestationDao
 import traore.adama.nextcut_android.database.model.Haircut
 import traore.adama.nextcut_android.database.model.Nextcuter
+import traore.adama.nextcut_android.database.model.Prestation
 
-@Database(entities = arrayOf(Haircut::class, Nextcuter::class), version = 2, exportSchema = true)
+@Database(entities = arrayOf(Haircut::class, Nextcuter::class, Prestation::class), version = 3, exportSchema = true)
 abstract class NextCutDatabase: RoomDatabase(){
     abstract fun haircutDao() : HaircutDao
     abstract fun nextcuterDao(): NextcuterDao
+    abstract fun prestationDao(): PrestationDao
 
     /**
      * I should follow the singleton design pattern when instantiating a Database object, as each RoomDatabase

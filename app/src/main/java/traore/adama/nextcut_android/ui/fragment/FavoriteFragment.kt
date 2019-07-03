@@ -47,7 +47,7 @@ class FavoriteFragment : Fragment(), IListItemClick<Nextcuter> {
         super.onViewCreated(view, savedInstanceState)
 
 
-        adapter = NextcuterAdapter(this)
+        adapter = NextcuterAdapter(activity?.application!!)
         rcvCategory.setHasFixedSize(true)
         rcvCategory.layoutManager =
             androidx.recyclerview.widget.GridLayoutManager(context, resources.getInteger(R.integer.column_count))

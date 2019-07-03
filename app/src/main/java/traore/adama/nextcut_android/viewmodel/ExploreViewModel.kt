@@ -1,5 +1,6 @@
 package traore.adama.nextcut_android.viewmodel
 
+import android.app.Application
 import android.util.Log
 import android.view.View
 import androidx.lifecycle.LiveData
@@ -11,7 +12,7 @@ import traore.adama.nextcut_android.R
 import traore.adama.nextcut_android.services.network.MyWebApi
 import javax.inject.Inject
 
-class ExploreViewModel:BaseViewModel(){
+class ExploreViewModel(application: Application) : BaseViewModel(application){
 
     val Tag: String = ExploreViewModel::class.java.simpleName;
 

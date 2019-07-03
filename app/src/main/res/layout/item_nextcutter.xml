@@ -1,71 +1,84 @@
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-                                   xmlns:app="http://schemas.android.com/apk/res-auto"
-                                   xmlns:tools="http://schemas.android.com/tools"
-                                   android:id="@+id/product_entry"
-                                   android:layout_width="match_parent"
-                                   android:layout_height="wrap_content"
-                                   android:layout_margin="4dp"
-                                   android:foreground="?android:attr/selectableItemBackground">
-    <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="8dp">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
 
-
-
-        <ImageView
-                android:id="@+id/imvImage"
+    <data>
+        <variable name="viewModel" type="traore.adama.nextcut_android.viewmodel.NextcuterListItemViewModel"/>
+    </data>
+    
+    <androidx.cardview.widget.CardView
+                                       android:id="@+id/product_entry"
+                                       android:layout_width="match_parent"
+                                       android:layout_height="wrap_content"
+                                       android:layout_margin="4dp"
+                                       android:foreground="?android:attr/selectableItemBackground">
+        <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/img_height_nextcutter"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                tools:background="@color/colorPrimary"
-                android:layout_gravity="center"
-                android:scaleType="fitCenter"/>
-
-        <TextView
-                android:id="@+id/txvPrice"
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                style="@style/TextViewPrice"
-                android:padding="@dimen/padding_14"
-                android:background="@drawable/shape_price"
-                app:layout_constraintTop_toTopOf="@id/imvImage"
-                app:layout_constraintStart_toStartOf="@id/imvImage"
-                android:layout_marginStart="@dimen/margin_start_textview_item"
-                android:layout_marginTop="@dimen/margin_top_textview_item"
-                tools:text="195€"
-                android:textStyle="bold"/>
+                android:padding="8dp">
 
-        <TextView
-                android:id="@+id/txvBarberName"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                style="@style/TextViewSubTitle"
-                android:padding="@dimen/padding_14"
-                android:gravity="start"
-                android:ellipsize="end"
-                app:layout_constraintTop_toBottomOf="@id/imvImage"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/imbFavorite"
-                tools:text="Elige Eliko"
-                android:layout_marginEnd="@dimen/margin_12dp"
-                android:textStyle="bold"/>
 
-        <CheckBox
-                android:id="@+id/imbFavorite"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_gravity="end"
-                android:button="@null"
-                android:checked="false"
-                app:layout_constraintTop_toBottomOf="@id/imvImage"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                android:minWidth="@dimen/min_width_fav_button"
-                android:background="@drawable/like_icon_statelist"
-                android:stateListAnimator="@animator/like_scale"
-        />
+            <ImageView
+                    android:id="@+id/imvImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/img_height_nextcutter"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:background="@color/colorPrimary"
+                    app:background="@{viewModel.getBackground()}"
+                    android:layout_gravity="center"
+                    android:scaleType="fitCenter"
+            />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.cardview.widget.CardView>
+            <TextView
+                    android:id="@+id/txvPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/TextViewPrice"
+                    android:padding="@dimen/padding_14"
+                    android:background="@drawable/shape_price"
+                    app:layout_constraintTop_toTopOf="@id/imvImage"
+                    app:layout_constraintStart_toStartOf="@id/imvImage"
+                    android:layout_marginStart="@dimen/margin_start_textview_item"
+                    android:layout_marginTop="@dimen/margin_top_textview_item"
+                    app:mutableText="@{viewModel.getPrices()}"
+                    tools:text="10€ - 195€"
+                    android:textStyle="bold"
+            />
+
+            <TextView
+                    android:id="@+id/txvBarberName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    style="@style/TextViewSubTitle"
+                    android:padding="@dimen/padding_14"
+                    android:gravity="start"
+                    android:ellipsize="end"
+                    app:layout_constraintTop_toBottomOf="@id/imvImage"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/imbFavorite"
+                    tools:text="Elige Eliko"
+                    app:mutableText="@{viewModel.getName()}"
+                    android:layout_marginEnd="@dimen/margin_12dp"
+                    android:textStyle="bold"
+            />
+
+            <CheckBox
+                    android:id="@+id/imbFavorite"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="end"
+                    android:button="@null"
+                    android:checked="false"
+                    app:layout_constraintTop_toBottomOf="@id/imvImage"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:minWidth="@dimen/min_width_fav_button"
+                    app:mutableChecked="@{viewModel.isFavorite}"
+                    android:background="@drawable/like_icon_statelist"
+                    android:stateListAnimator="@animator/like_scale"
+            />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>
