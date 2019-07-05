@@ -41,4 +41,6 @@
     <string name="retry">Retry</string>
     <string name="haircuts_fetch_error">An error occurred while loading the haircuts</string>
     <string name="profile">profile</string>
+    <string name="select_a_category">Select a category</string>
+    <string name="see_all">See all</string>
 </resources>

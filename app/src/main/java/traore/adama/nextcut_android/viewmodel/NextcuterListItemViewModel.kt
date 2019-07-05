@@ -9,6 +9,7 @@ import traore.adama.nextcut_android.database.model.Nextcuter
 
 
 class NextcuterListItemViewModel(application: Application) : BaseViewModel(application) {
+
     private val prices = MutableLiveData<String>()
     private val urlImage = MutableLiveData<String>()
     private val nextcutersName = MutableLiveData<String>()
@@ -17,14 +18,13 @@ class NextcuterListItemViewModel(application: Application) : BaseViewModel(appli
     val context: Context = application.applicationContext
 
 
-    fun bind(item: Nextcuter)
-    {
+    fun bind(item: Nextcuter) {
         prices.value = displayPrices(getPrices(item.id))
         nextcutersName.value = "${item.firstname} ${item.lastname}"
         background.value = randomColor()
     }
 
-    fun getPrices(nextcuterId: Long?) : List<Int>? {
+    private fun getPrices(nextcuterId: Long?): List<Int>? {
         if (nextcuterId == null) emptyList<Int>()
 
         val prestations =
@@ -36,13 +36,13 @@ class NextcuterListItemViewModel(application: Application) : BaseViewModel(appli
         }
     }
 
-    fun displayPrices(prices: List<Int>?): String{
+    private fun displayPrices(prices: List<Int>?): String {
 
         return if (prices != null) "${prices.min()} - ${prices.max()}" else "no prices"
     }
 
 
-    fun randomColor():Int{
+    private fun randomColor(): Int {
 
         val r = (0xff * Math.random()).toInt()
         val g = (0xff * Math.random()).toInt()
@@ -51,15 +51,15 @@ class NextcuterListItemViewModel(application: Application) : BaseViewModel(appli
         return Color.rgb(r, g, b)
     }
 
-    fun getBackground() : MutableLiveData<Int>{
+    fun getBackground(): MutableLiveData<Int> {
         return background
     }
 
-    fun getName() : MutableLiveData<String>{
+    fun getName(): MutableLiveData<String> {
         return nextcutersName
     }
 
-    fun getPrices() : MutableLiveData<String>{
+    fun getPrices(): MutableLiveData<String> {
         return prices
     }
 }
