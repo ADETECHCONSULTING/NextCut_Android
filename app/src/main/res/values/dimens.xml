@@ -17,4 +17,6 @@
     <dimen name="margin_top_textview_item">8dp</dimen>
     <dimen name="recyclerview_smallcategory_height">75dp</dimen>
     <dimen name="margin_8dp">8dp</dimen>
+    <dimen name="haircut_smallwidth">60dp</dimen>
+    <dimen name="haircut_smallheight">60dp</dimen>
 </resources>

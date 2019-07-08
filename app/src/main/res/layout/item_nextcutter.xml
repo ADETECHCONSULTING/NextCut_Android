@@ -5,18 +5,18 @@
     <data>
         <variable name="viewModel" type="traore.adama.nextcut_android.viewmodel.NextcuterListItemViewModel"/>
     </data>
-    
+
     <androidx.cardview.widget.CardView
-                                       android:id="@+id/product_entry"
-                                       android:layout_width="match_parent"
-                                       android:layout_height="wrap_content"
-                                       android:layout_margin="4dp"
-                                       android:foreground="?android:attr/selectableItemBackground">
+            android:id="@+id/product_entry"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:foreground="?android:attr/selectableItemBackground">
+
         <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="8dp">
-
 
             <ImageView
                     android:id="@+id/imvImage"
@@ -35,12 +35,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     style="@style/TextViewPrice"
-                    android:padding="@dimen/padding_14"
                     android:background="@drawable/shape_price"
-                    app:layout_constraintTop_toTopOf="@id/imvImage"
-                    app:layout_constraintStart_toStartOf="@id/imvImage"
-                    android:layout_marginStart="@dimen/margin_start_textview_item"
-                    android:layout_marginTop="@dimen/margin_top_textview_item"
+                    app:layout_constraintTop_toBottomOf="@id/txvBarberName"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:mutableText="@{viewModel.getPrices()}"
                     tools:text="10€ - 195€"
                     android:textStyle="bold"
@@ -50,14 +47,17 @@
                     android:id="@+id/txvBarberName"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    style="@style/TextViewSubTitle"
-                    android:padding="@dimen/padding_14"
+                    style="@style/TextViewContent"
+                    android:paddingTop="@dimen/padding_14"
+                    android:paddingBottom="@dimen/padding_14"
+                    android:paddingEnd="@dimen/padding_14"
                     android:gravity="start"
                     android:ellipsize="end"
                     app:layout_constraintTop_toBottomOf="@id/imvImage"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toStartOf="@id/imbFavorite"
                     tools:text="Elige Eliko"
+                    android:lines="1"
                     app:mutableText="@{viewModel.getName()}"
                     android:layout_marginEnd="@dimen/margin_12dp"
                     android:textStyle="bold"
@@ -72,12 +72,11 @@
                     android:checked="false"
                     app:layout_constraintTop_toBottomOf="@id/imvImage"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
                     android:minWidth="@dimen/min_width_fav_button"
                     app:mutableChecked="@{viewModel.isFavorite}"
                     android:background="@drawable/like_icon_statelist"
                     android:stateListAnimator="@animator/like_scale"
-            />
+                    android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="@+id/txvBarberName"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>

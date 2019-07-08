@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable name="viewModel" type="traore.adama.nextcut_android.viewmodel.HaircutListItemViewModel"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:clipToPadding="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        <ImageView
+                android:id="@+id/imvHaircut"
+                android:layout_width="@dimen/haircut_smallwidth"
+                android:layout_height="@dimen/haircut_smallheight"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:background="@color/colorPrimary"
+                android:elevation="8dp"
+                app:picasso="@{viewModel.getUrlImage()}"
+        />
+
+        <TextView
+                android:id="@+id/txvHaircut"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/imvHaircut"
+                app:layout_constraintStart_toStartOf="@id/imvHaircut"
+                app:layout_constraintEnd_toEndOf="@id/imvHaircut"
+                app:mutableText="@{viewModel.getName()}"
+                android:lines="2"
+                android:gravity="top|center_horizontal"
+                tools:text="haircut"
+                android:ellipsize="end"
+                style="@style/TextViewContent"
+        />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

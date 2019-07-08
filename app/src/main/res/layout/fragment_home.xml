@@ -53,7 +53,7 @@
             <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rcvSmallCategory"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/recyclerview_smallcategory_height"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/margin_8dp"
                     android:layout_marginEnd="@dimen/margin_8dp"
                     app:layout_collapseMode="parallax"
@@ -80,6 +80,7 @@
             android:id="@+id/rcvMain"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/margin_12dp"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

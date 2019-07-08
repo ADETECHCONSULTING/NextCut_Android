@@ -1,4 +1,4 @@
-package traore.adama.nextcut_android.services.repository
+package traore.adama.nextcut_android.repository
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -33,7 +33,6 @@ class NextcuterRepository() {
         list.add(Nextcuter(12, "Lori", "Evan", ""))
 
         data.value = list
-
 
 
         val haircut = Haircut(1, "https://www.menshairstyletrends.com/wp-content/uploads/2018/01/barbernathen-buzz-cut-low-bald-fade-line-up.jpg",
